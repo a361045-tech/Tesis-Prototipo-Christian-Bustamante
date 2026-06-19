@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ddchjfco3xdv8"]
+
+[ext_resource type="Script" uid="uid://v1eq3v7wqagl" path="res://Scripts/puntajesBotones.gd" id="1_337vp"]
+
+[node name="PuntajesMenu" type="Node2D" unique_id=505917152]
+script = ExtResource("1_337vp")
+
+[node name="PuntajesLabel" type="Label" parent="." unique_id=390756855]
+offset_left = 436.0
+offset_top = 23.0
+offset_right = 604.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 40
+text = "Puntajes
+"
+
+[node name="Regresar" type="Button" parent="." unique_id=2027901034]
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 161.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 25
+text = "Regresar"
+
+[node name="Usuarios guardados" type="Label" parent="." unique_id=1629557978]
+offset_left = 243.0
+offset_top = 156.0
+offset_right = 861.0
+offset_bottom = 425.0
+text = "Usuarios Guardados:"
+
+[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://1w4vbcvqyn0y"]
+
+[ext_resource type="Script" uid="uid://bxaw0xssx6743" path="res://Escenas/RegistroBotones.gd" id="1_ct2pj"]
+
+[node name="Registro" type="Node2D" unique_id=764009104]
+script = ExtResource("1_ct2pj")
+
+[node name="Registrate" type="Label" parent="." unique_id=1378370153]
+offset_left = 482.0
+offset_top = 46.0
+offset_right = 657.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 40
+text = "	Registrate"
+
+[node name="RegistrarBoton" type="Button" parent="." unique_id=78817861]
+offset_left = 477.0
+offset_top = 463.0
+offset_right = 675.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 30
+text = "Registrar
+"
+
+[node name="Nombres" type="LineEdit" parent="." unique_id=1764049303]
+offset_left = 481.0
+offset_top = 133.0
+offset_right = 672.0
+offset_bottom = 187.0
+text = "Nombres"
+
+[node name="ApellidoPaterno" type="LineEdit" parent="." unique_id=1930676262]
+offset_left = 480.0
+offset_top = 198.0
+offset_right = 671.0
+offset_bottom = 252.0
+text = "Apellido paterno"
+
+[node name="ApellidoMaterno" type="LineEdit" parent="." unique_id=1259439045]
+offset_left = 480.0
+offset_top = 267.0
+offset_right = 671.0
+offset_bottom = 321.0
+text = "Apellido materno"
+
+[node name="Grupo" type="LineEdit" parent="." unique_id=1339633249]
+offset_left = 481.0
+offset_top = 331.0
+offset_right = 672.0
+offset_bottom = 385.0
+text = "Grupo"
+
+[connection signal="pressed" from="RegistrarBoton" to="." method="_on_registrar_boton_pressed"]
