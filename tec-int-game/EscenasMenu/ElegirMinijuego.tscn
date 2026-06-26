@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c7grfcj645xg3"]
+
+[ext_resource type="Script" uid="uid://chfn103aa2vse" path="res://ScriptsMenus/elegir_minijuegoBotones.gd" id="1_usjtf"]
+
+[node name="ElegirMinijuegoMenu" type="Node2D" unique_id=59473627]
+script = ExtResource("1_usjtf")
+
+[node name="Label" type="Label" parent="." unique_id=301626074]
+offset_left = 415.0
+offset_top = 22.0
+offset_right = 713.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 40
+text = "ElegirMinijuego
+"
+
+[node name="TiposDeEnergia" type="Button" parent="." unique_id=2116230025]
+offset_left = 176.0
+offset_top = 175.0
+offset_right = 410.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 25
+text = "Tipos de energia"
+
+[node name="Regresar" type="Button" parent="." unique_id=2072957432]
+offset_left = 15.0
+offset_top = 18.0
+offset_right = 155.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 25
+text = "Regresar"
+
+[connection signal="pressed" from="TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]
+[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]

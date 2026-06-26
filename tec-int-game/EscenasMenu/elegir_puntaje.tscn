@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://gmlis76qii2u"]
+
+[ext_resource type="Script" uid="uid://dgbhvrm50ye0o" path="res://ScriptsMenus/ElegirPuntajeBotones.gd" id="1_inbec"]
+
+[node name="Elegir_Puntaje" type="Node2D" unique_id=860004823]
+script = ExtResource("1_inbec")
+
+[node name="puntajeDeMinijuego" type="Label" parent="." unique_id=879230792]
+offset_left = 386.0
+offset_top = 28.0
+offset_right = 782.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 30
+text = "Elegir puntaje de minijuego"
+
+[node name="Regresar" type="Button" parent="." unique_id=2134997829]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 185.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 25
+text = "Regresar"
+
+[node name="TiposDeEnergia" type="Button" parent="." unique_id=1754826419]
+offset_left = 184.0
+offset_top = 117.0
+offset_right = 424.0
+offset_bottom = 234.0
+theme_override_font_sizes/font_size = 25
+text = "Tipos de energia
+"
+
+[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="pressed" from="TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://4j5uhut4lf4l"]
+
+[ext_resource type="Script" uid="uid://dsi3om3u481a1" path="res://tipo_de_energia_base.gd" id="2_moen4"]
+[ext_resource type="Texture2D" uid="uid://chq3rgsxn47oh" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleDesactivado.png" id="3_moen4"]
+[ext_resource type="Texture2D" uid="uid://cwbiq0t8ejcjg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2150264.png" id="3_smokt"]
+[ext_resource type="Texture2D" uid="uid://cyqf5ldjc73yx" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/LineDesactivada.png" id="4_smokt"]
+
+[node name="Node2D" type="Node2D" unique_id=56818813]
+
+[node name="TipoDeEnergiaBase" type="Sprite2D" parent="." unique_id=1216566536]
+position = Vector2(279, 220)
+scale = Vector2(0.16682333, 0.18750006)
+script = ExtResource("2_moen4")
+
+[node name="DineroSprite" type="Sprite2D" parent="TipoDeEnergiaBase" unique_id=1115778506]
+position = Vector2(-221.79153, -378.66656)
+scale = Vector2(0.59751225, 0.4879191)
+texture = ExtResource("3_smokt")
+
+[node name="Button" type="Button" parent="TipoDeEnergiaBase" unique_id=200038359]
+offset_left = -491.53806
+offset_top = -207.99985
+offset_right = 545.48706
+offset_bottom = 202.66678
+metadata/_edit_use_anchors_ = true
+
+[node name="Dinero" type="Label" parent="TipoDeEnergiaBase" unique_id=147150414]
+offset_left = -95.909805
+offset_top = -522.6665
+offset_right = 155.85356
+offset_bottom = -249.6665
+scale = Vector2(1.1514772, 1.0561142)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 200
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="ActivarLabel" type="Label" parent="TipoDeEnergiaBase" unique_id=1384607473]
+offset_left = -257.7577
+offset_top = -122.666626
+offset_right = 249.24231
+offset_bottom = 82.333374
+theme_override_colors/font_color = Color(2.4065375e-07, 0.8701121, 0.22256827, 1)
+theme_override_font_sizes/font_size = 150
+text = "Activar"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EnergiaPrimaria" type="Sprite2D" parent="TipoDeEnergiaBase" unique_id=498521052]
+position = Vector2(28.772942, 633.73334)
+scale = Vector2(5.5311036, 5.815444)
+texture = ExtResource("3_moen4")
+
+[node name="Line1P" type="Sprite2D" parent="TipoDeEnergiaBase/EnergiaPrimaria" unique_id=1415881341]
+position = Vector2(-3.000002, -52)
+rotation = 1.5707964
+scale = Vector2(0.6316865, -0.8996113)
+texture = ExtResource("4_smokt")
+
+[node name="Line2P" type="Sprite2D" parent="TipoDeEnergiaBase/EnergiaPrimaria" unique_id=24968836]
+position = Vector2(76.00001, 2.000008)
+scale = Vector2(0.6316865, -0.8996113)
+texture = ExtResource("4_smokt")
+
+[node name="LabelEPP" type="Label" parent="TipoDeEnergiaBase/EnergiaPrimaria" unique_id=474956583]
+offset_left = -46.818233
+offset_top = -12.3579
+offset_right = 48.181767
+offset_bottom = 10.6421
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Desactivado"
+
+[node name="EnergiaSecundaria" type="Sprite2D" parent="TipoDeEnergiaBase" unique_id=1371886459]
+position = Vector2(877.5747, 653.3333)
+scale = Vector2(5.531, 5.815)
+texture = ExtResource("3_moen4")
+
+[node name="LabelESP" type="Label" parent="TipoDeEnergiaBase/EnergiaSecundaria" unique_id=1175239181]
+offset_left = -46.819107
+offset_top = -24.717686
+offset_right = 48.180893
+offset_bottom = 24.282314
+scale = Vector2(0.9747772, 0.9889395)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+text = "Sin
+produccion"
+
+[connection signal="pressed" from="TipoDeEnergiaBase/Button" to="TipoDeEnergiaBase" method="_on_button_pressed"]
