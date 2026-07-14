@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4j5uhut4lf4l"]
 
-[ext_resource type="Script" uid="uid://dsi3om3u481a1" path="res://tipo_de_energia_base.gd" id="2_moen4"]
+[ext_resource type="Script" uid="uid://dsi3om3u481a1" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/tipo_de_energia_base.gd" id="2_moen4"]
 [ext_resource type="Texture2D" uid="uid://chq3rgsxn47oh" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleDesactivado.png" id="3_moen4"]
 [ext_resource type="Texture2D" uid="uid://cwbiq0t8ejcjg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2150264.png" id="3_smokt"]
 [ext_resource type="Texture2D" uid="uid://cyqf5ldjc73yx" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/LineDesactivada.png" id="4_smokt"]

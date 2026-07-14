@@ -2,46 +2,106 @@
 
 [ext_resource type="Script" uid="uid://2lh46hibpmqx" path="res://ScriptsMenus/menu_principalBotones.gd" id="1_20qv4"]
 [ext_resource type="Script" uid="uid://upxswr4wuo72" path="res://ScriptsMenus/guardado.gd" id="2_0ftpc"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="2_c0x80"]
+[ext_resource type="Texture2D" uid="uid://uolyqm83y5uf" path="res://UI_Menus/RectanguloJugar.png" id="3_poond"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="4_ah465"]
+[ext_resource type="Texture2D" uid="uid://duy14w8kuieb5" path="res://UI_Menus/CirculoBotones.png" id="5_3gnlh"]
+[ext_resource type="Texture2D" uid="uid://dqvn625gesilp" path="res://UI_Menus/Play_Icono.png" id="6_ahw5c"]
+[ext_resource type="Texture2D" uid="uid://dfg4esa3qof57" path="res://UI_Menus/RectanguloPuntajes.png" id="7_vy4cm"]
+[ext_resource type="Texture2D" uid="uid://bdh00n26qlnk8" path="res://UI_Menus/Puntajes_Icono.png" id="8_1gdsb"]
+[ext_resource type="Texture2D" uid="uid://dddmho3g1yjuw" path="res://UI_Menus/CirculoSalir.png" id="9_cypcg"]
+[ext_resource type="Texture2D" uid="uid://d3plpj1sreqlo" path="res://UI_Menus/Salir_Icono.png" id="10_qw2dv"]
+[ext_resource type="FontFile" uid="uid://d4cqwdauio4fv" path="res://UI_Menus/Baloo-Regular.ttf" id="11_5h7w3"]
 
 [node name="Menu" type="Node2D" unique_id=1903223931]
 script = ExtResource("1_20qv4")
 
-[node name="BotonPlay" type="Button" parent="." unique_id=2080799661]
-offset_left = 440.0
-offset_top = 187.0
-offset_right = 601.0
-offset_bottom = 265.0
-theme_override_font_sizes/font_size = 30
-text = "Jugar"
+[node name="UI" type="Node2D" parent="." unique_id=1829577130]
 
-[node name="BotonPuntajes" type="Button" parent="." unique_id=1163408750]
-offset_left = 439.0
-offset_top = 316.0
-offset_right = 600.0
-offset_bottom = 394.0
-theme_override_font_sizes/font_size = 30
-text = "Puntajes"
+[node name="FondoMenus" type="Sprite2D" parent="UI" unique_id=1901501972]
+position = Vector2(960, 543)
+scale = Vector2(1.3375, 1.0644531)
+texture = ExtResource("2_c0x80")
 
-[node name="BotonSalir" type="Button" parent="." unique_id=698769303]
-offset_left = 439.0
-offset_top = 455.0
-offset_right = 600.0
-offset_bottom = 533.0
-theme_override_font_sizes/font_size = 30
-text = "Salir
-"
+[node name="RectanguloJugar" type="Sprite2D" parent="UI" unique_id=629617589]
+position = Vector2(989, 363)
+texture = ExtResource("3_poond")
 
-[node name="Titulo" type="Label" parent="." unique_id=1018658979]
-offset_left = 371.0
-offset_top = 29.0
-offset_right = 682.0
+[node name="BotonPlay" type="Button" parent="UI/RectanguloJugar" unique_id=2080799661]
+offset_left = -230.0
+offset_top = -81.0
+offset_right = 177.0
+offset_bottom = 79.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_ah465")
+theme_override_font_sizes/font_size = 60
+text = "        Jugar"
+flat = true
+
+[node name="CirculoPlay" type="Sprite2D" parent="UI/RectanguloJugar" unique_id=316359816]
+position = Vector2(-140, 0)
+texture = ExtResource("5_3gnlh")
+
+[node name="PlayIcono" type="Sprite2D" parent="UI/RectanguloJugar/CirculoPlay" unique_id=189363416]
+position = Vector2(14, 0)
+texture = ExtResource("6_ahw5c")
+
+[node name="RectanguloPuntajes" type="Sprite2D" parent="UI" unique_id=2038351307]
+position = Vector2(994, 612)
+texture = ExtResource("7_vy4cm")
+
+[node name="BotonPuntajes" type="Button" parent="UI/RectanguloPuntajes" unique_id=1163408750]
+offset_left = -217.0
+offset_top = -90.0
+offset_right = 186.0
+offset_bottom = 77.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_ah465")
+theme_override_font_sizes/font_size = 45
+text = "           Puntajes"
+flat = true
+
+[node name="CirculoPuntajes" type="Sprite2D" parent="UI/RectanguloPuntajes" unique_id=872867171]
+position = Vector2(-140, 0)
+texture = ExtResource("5_3gnlh")
+
+[node name="PuntajesIcono" type="Sprite2D" parent="UI/RectanguloPuntajes/CirculoPuntajes" unique_id=1005936277]
+position = Vector2(2, 2)
+texture = ExtResource("8_1gdsb")
+
+[node name="CirculoSalir" type="Sprite2D" parent="UI" unique_id=989676364]
+position = Vector2(977, 875)
+texture = ExtResource("9_cypcg")
+
+[node name="BotonSalir" type="Button" parent="UI/CirculoSalir" unique_id=698769303]
+offset_left = -104.0
+offset_top = -93.0
+offset_right = 104.0
 offset_bottom = 98.0
-theme_override_font_sizes/font_size = 50
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_ah465")
+theme_override_font_sizes/font_size = 60
+text = "
+"
+flat = true
+
+[node name="SalirIcono" type="Sprite2D" parent="UI/CirculoSalir" unique_id=197255606]
+position = Vector2(4, 0)
+texture = ExtResource("10_qw2dv")
+
+[node name="Titulo" type="Label" parent="UI" unique_id=1018658979]
+offset_left = 595.0
+offset_top = 19.0
+offset_right = 1477.0
+offset_bottom = 256.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("11_5h7w3")
+theme_override_font_sizes/font_size = 140
 text = "Tec-Int game"
 
 [node name="Guardado" type="Node2D" parent="." unique_id=1731608308]
 script = ExtResource("2_0ftpc")
 
-[connection signal="pressed" from="BotonPlay" to="." method="_on_boton_play_pressed"]
-[connection signal="pressed" from="BotonPuntajes" to="." method="_on_boton_puntajes_pressed"]
-[connection signal="pressed" from="BotonSalir" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="UI/RectanguloJugar/BotonPlay" to="." method="_on_boton_play_pressed"]
+[connection signal="pressed" from="UI/RectanguloPuntajes/BotonPuntajes" to="." method="_on_boton_puntajes_pressed"]
+[connection signal="pressed" from="UI/CirculoSalir/BotonSalir" to="." method="_on_boton_salir_pressed"]

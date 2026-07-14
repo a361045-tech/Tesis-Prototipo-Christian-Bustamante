@@ -19,6 +19,11 @@ var apellidoP = ""
 var apellidoM = ""
 var grupo = "" 
 
+var candadoPanel = false
+var candadoMolino = true
+var candadoNuclear = true
+var candadoTermo = true
+
 var save_path = "user://save_game.dat"
 
 var game_data : Dictionary = {

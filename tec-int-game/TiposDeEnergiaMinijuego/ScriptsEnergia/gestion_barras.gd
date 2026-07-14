@@ -13,7 +13,19 @@ func cambiarBarra(cantidad: float, delta: float, SubirBajar: bool, tipoBarra: Pr
 		
 	if SubirBajar == false:
 		tipoBarra.value -= cantidad * delta
+		
 
-func cambiarLabel(label: Label, texto: String, color: Color) -> void:
-	label.text = texto
-	label.add_theme_color_override("font_color", color)
+func cambiarLabel(objeto: Control, texto: String, color: Color) -> void:
+		objeto.text = texto
+		objeto.add_theme_color_override("font_color", color)
+
+func cambiarFlechas(cantidadCambio: float, SubirBajar: bool, tipoLabel: Label) -> void:
+	var cantidadActual = float(tipoLabel.text)
+	
+	if SubirBajar == true:
+		cantidadActual += cantidadCambio
+		tipoLabel.text = str(cantidadActual, "%")
+	
+	if SubirBajar == false:
+		cantidadActual -= cantidadCambio
+		tipoLabel.text = str(cantidadActual, "%")

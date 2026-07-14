@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjrcw0lcywad0"]
+
+[ext_resource type="Script" uid="uid://bdr61bfuth75n" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/electricidad.gd" id="1_vvywp"]
+
+[sub_resource type="Gradient" id="Gradient_vvywp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5wm3k"]
+gradient = SubResource("Gradient_vvywp")
+
+[node name="RayoPrueba" type="Node2D" unique_id=67529069]
+
+[node name="Electricidad" type="Line2D" parent="." unique_id=245554657]
+position = Vector2(47, 48)
+default_color = Color(0.20392157, 1, 1, 1)
+script = ExtResource("1_vvywp")
+
+[node name="PointLight2D" type="PointLight2D" parent="Electricidad" unique_id=561832965]
+position = Vector2(30, 10)
+color = Color(0.20392157, 1, 1, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_5wm3k")

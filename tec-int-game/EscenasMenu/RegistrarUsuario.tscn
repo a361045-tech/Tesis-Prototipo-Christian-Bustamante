@@ -31,27 +31,27 @@ offset_left = 481.0
 offset_top = 133.0
 offset_right = 672.0
 offset_bottom = 187.0
-text = "Nombres"
+placeholder_text = "Nombres"
 
 [node name="ApellidoPaterno" type="LineEdit" parent="." unique_id=1930676262]
 offset_left = 480.0
 offset_top = 198.0
 offset_right = 671.0
 offset_bottom = 252.0
-text = "Apellido paterno"
+placeholder_text = "Apellido paterno"
 
 [node name="ApellidoMaterno" type="LineEdit" parent="." unique_id=1259439045]
 offset_left = 480.0
 offset_top = 267.0
 offset_right = 671.0
 offset_bottom = 321.0
-text = "Apellido materno"
+placeholder_text = "Apellido materno"
 
 [node name="Grupo" type="LineEdit" parent="." unique_id=1339633249]
 offset_left = 481.0
 offset_top = 331.0
 offset_right = 672.0
 offset_bottom = 385.0
-text = "Grupo"
+placeholder_text = "Grupo"
 
 [connection signal="pressed" from="RegistrarBoton" to="." method="_on_registrar_boton_pressed"]

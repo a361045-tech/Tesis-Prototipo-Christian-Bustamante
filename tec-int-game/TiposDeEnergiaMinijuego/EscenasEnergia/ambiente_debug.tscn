@@ -1,0 +1,361 @@
+[gd_scene format=3 uid="uid://dexvv38teylo8"]
+
+[ext_resource type="Script" uid="uid://dqkm28joaxg0j" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/gestion_dinero.gd" id="1_reva6"]
+[ext_resource type="Script" uid="uid://du21sr1ce6dim" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/gestion_barras.gd" id="2_wbjuh"]
+[ext_resource type="Script" uid="uid://eau6v6n2fb17" path="res://TiposDeEnergiaMinijuego/EscenasEnergia/animador.gd" id="3_0cond"]
+[ext_resource type="Texture2D" uid="uid://bywd18gr5l14h" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/image 34.png" id="4_o3x0f"]
+[ext_resource type="Texture2D" uid="uid://cwbiq0t8ejcjg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2150264.png" id="5_uc16p"]
+[ext_resource type="Texture2D" uid="uid://dm75jr2p2gon1" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgessBar/bar_round_gloss_large.png" id="6_lyqga"]
+[ext_resource type="Texture2D" uid="uid://damgwyw7ensdl" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2550433.png" id="7_jsdqd"]
+[ext_resource type="Texture2D" uid="uid://dqjiv5rkdwtta" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Corazon-removebg-preview.png" id="8_csrvv"]
+[ext_resource type="Script" uid="uid://520qfhotfyg1" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/corazon_barra.gd" id="9_3kq2g"]
+[ext_resource type="Script" uid="uid://dbss432q8wlsb" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/dias_horas.gd" id="10_g1mod"]
+[ext_resource type="Texture2D" uid="uid://c5ulyxuyle70y" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/pngtree-icon-of-sun-png-image_6484830.png" id="11_flxfu"]
+[ext_resource type="Texture2D" uid="uid://dro4b1kdelfk0" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/7204190.png" id="12_p3m0f"]
+[ext_resource type="Texture2D" uid="uid://b4jyn2nv85isb" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgessBar/bar_round_gloss_large_square.png" id="13_2odf7"]
+[ext_resource type="Texture2D" uid="uid://di0imb7nrhkfo" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Viento.png" id="14_05kcy"]
+
+[sub_resource type="Animation" id="Animation_05p3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4o2i1"]
+resource_name = "parpadeo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrlws"]
+_data = {
+&"RESET": SubResource("Animation_05p3a"),
+&"parpadeo": SubResource("Animation_4o2i1")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dk72"]
+texture = ExtResource("6_lyqga")
+
+[sub_resource type="Animation" id="Animation_j02wc"]
+resource_name = "ParpadeoDiaLabel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.01666665, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ax6i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.95, 0.9508333, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_741dc"]
+_data = {
+&"ParpadeoDiaLabel": SubResource("Animation_j02wc"),
+&"RESET": SubResource("Animation_8ax6i")
+}
+
+[sub_resource type="Animation" id="Animation_b34cu"]
+resource_name = "ParpadeoLabelViento"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y0q1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j78rl"]
+_data = {
+&"ParpadeoLabelViento": SubResource("Animation_b34cu"),
+&"RESET": SubResource("Animation_y0q1b")
+}
+
+[sub_resource type="Animation" id="Animation_7ay1y"]
+resource_name = "ParpadeoViento"
+length = 0.6333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.32, 0.32, 0.32, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ciuob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oq7px"]
+_data = {
+&"ParpadeoViento": SubResource("Animation_7ay1y"),
+&"RESET": SubResource("Animation_ciuob")
+}
+
+[node name="AmbienteDebug" type="Node2D" unique_id=2054238753]
+
+[node name="GameManager" type="Node2D" parent="." unique_id=695620979]
+
+[node name="GestionDinero" type="Node2D" parent="GameManager" unique_id=816291860 node_paths=PackedStringArray("labelDinero")]
+script = ExtResource("1_reva6")
+labelDinero = NodePath("")
+
+[node name="GestionBarras" type="Node2D" parent="GameManager" unique_id=799312984]
+script = ExtResource("2_wbjuh")
+
+[node name="Animador" type="Node2D" parent="GameManager" unique_id=18799588 node_paths=PackedStringArray("animacionDineroLabel", "animacionVientoLabel", "animacionVientoFuerte", "animacionDiaLabel")]
+script = ExtResource("3_0cond")
+animacionDineroLabel = NodePath("")
+animacionVientoLabel = NodePath("")
+animacionVientoFuerte = NodePath("")
+animacionDiaLabel = NodePath("")
+
+[node name="UI" type="Node2D" parent="." unique_id=1484459822]
+
+[node name="Background" type="Sprite2D" parent="UI" unique_id=527855766]
+position = Vector2(575.5, 324.50003)
+scale = Vector2(0.8006944, 0.633789)
+texture = ExtResource("4_o3x0f")
+
+[node name="DineroSprite" type="Sprite2D" parent="UI" unique_id=47308063]
+position = Vector2(977, 64)
+scale = Vector2(0.14076442, 0.11656356)
+texture = ExtResource("5_uc16p")
+
+[node name="DineroTotal" type="Label" parent="UI" unique_id=1969052632]
+offset_left = 1006.0
+offset_top = 32.0
+offset_right = 1083.0
+offset_bottom = 95.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 45
+text = "100"
+
+[node name="AnimationDinero" type="AnimationPlayer" parent="UI/DineroTotal" unique_id=2048567920]
+libraries/ = SubResource("AnimationLibrary_jrlws")
+
+[node name="ProgressBarEnergia" type="ProgressBar" parent="UI" unique_id=701544684]
+offset_left = 485.0
+offset_top = 43.0
+offset_right = 703.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/fill = SubResource("StyleBoxTexture_2dk72")
+min_value = 1.0
+value = 50.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/ProgressBarEnergia" unique_id=1623693183]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnergiaSimbolo" type="Sprite2D" parent="UI/ProgressBarEnergia" unique_id=531047197]
+position = Vector2(254, 27)
+scale = Vector2(0.122759454, 0.11515074)
+texture = ExtResource("7_jsdqd")
+
+[node name="ProgressBarContaminacion" type="ProgressBar" parent="UI" unique_id=1450016238]
+offset_left = 482.0
+offset_top = 543.0
+offset_right = 700.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/fill = SubResource("StyleBoxTexture_2dk72")
+min_value = 1.0
+value = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/ProgressBarContaminacion" unique_id=907135218]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CorazonBarra" type="Sprite2D" parent="UI/ProgressBarContaminacion" unique_id=1744802029]
+position = Vector2(259, 30)
+scale = Vector2(0.3226195, 0.3094175)
+texture = ExtResource("8_csrvv")
+script = ExtResource("9_3kq2g")
+
+[node name="Ambiente" type="Node2D" parent="." unique_id=1576618348]
+
+[node name="DiasHoras" type="Timer" parent="Ambiente" unique_id=1817232221 node_paths=PackedStringArray("sol", "luna", "background", "barraEnergia", "barraContaminacion", "horasLabel", "diasLabel", "animador")]
+autostart = true
+script = ExtResource("10_g1mod")
+sol = NodePath("Sol")
+luna = NodePath("Luna")
+background = NodePath("")
+barraEnergia = NodePath("")
+barraContaminacion = NodePath("")
+horasLabel = NodePath("Horas")
+diasLabel = NodePath("DiaNumero")
+animador = NodePath("")
+
+[node name="Sol" type="Sprite2D" parent="Ambiente/DiasHoras" unique_id=1033755551]
+position = Vector2(58.5, 58.5)
+scale = Vector2(0.25277779, 0.24722221)
+texture = ExtResource("11_flxfu")
+
+[node name="Luna" type="Sprite2D" parent="Ambiente/DiasHoras" unique_id=1043633031]
+visible = false
+position = Vector2(58, 55)
+scale = Vector2(0.20703125, 0.20117188)
+texture = ExtResource("12_p3m0f")
+
+[node name="Horas" type="Label" parent="Ambiente/DiasHoras" unique_id=630575502]
+offset_left = 630.0
+offset_top = 113.0
+offset_right = 703.0
+offset_bottom = 155.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "6:00"
+
+[node name="DiaNumero" type="Label" parent="Ambiente/DiasHoras" unique_id=1497161433]
+modulate = Color(1, 0.95, 0.9508333, 1)
+offset_left = 485.0
+offset_top = 112.0
+offset_right = 558.0
+offset_bottom = 154.0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "Dia 1"
+
+[node name="AnimationDiaLabel" type="AnimationPlayer" parent="Ambiente/DiasHoras/DiaNumero" unique_id=1711992529]
+libraries/ = SubResource("AnimationLibrary_741dc")
+
+[node name="NivelViento" type="Label" parent="Ambiente" unique_id=1334297119]
+offset_left = 3.0
+offset_top = 399.0
+offset_right = 113.0
+offset_bottom = 468.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 20
+text = "Viento debil
+"
+
+[node name="AnimationVientoLabel" type="AnimationPlayer" parent="Ambiente/NivelViento" unique_id=559547538]
+libraries/ = SubResource("AnimationLibrary_j78rl")
+
+[node name="EfectoViento" type="Sprite2D" parent="Ambiente" unique_id=432220773]
+visible = false
+position = Vector2(65, 559)
+scale = Vector2(4.21275, 3.7637599)
+texture = ExtResource("13_2odf7")
+
+[node name="AnimationViento" type="AnimationPlayer" parent="Ambiente/EfectoViento" unique_id=2108229540]
+libraries/ = SubResource("AnimationLibrary_oq7px")
+
+[node name="VientoDebil" type="Sprite2D" parent="Ambiente" unique_id=1205920710]
+position = Vector2(60, 479.00003)
+scale = Vector2(0.15419063, 0.14246218)
+texture = ExtResource("14_05kcy")
+
+[node name="VientoFuerte" type="Sprite2D" parent="Ambiente" unique_id=671496989]
+position = Vector2(63.000004, 557)
+scale = Vector2(0.154, 0.142)
+texture = ExtResource("14_05kcy")
+
+[connection signal="timeout" from="Ambiente/DiasHoras" to="Ambiente/DiasHoras" method="_on_timeout"]

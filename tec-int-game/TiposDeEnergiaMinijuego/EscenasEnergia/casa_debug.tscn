@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://dbinvewmd5l6b"]
+
+[ext_resource type="Texture2D" uid="uid://bywd18gr5l14h" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/image 34.png" id="1_wtby8"]
+[ext_resource type="Texture2D" uid="uid://cwbiq0t8ejcjg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2150264.png" id="2_xj15n"]
+[ext_resource type="Texture2D" uid="uid://dm75jr2p2gon1" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgessBar/bar_round_gloss_large.png" id="3_6uidl"]
+[ext_resource type="Texture2D" uid="uid://damgwyw7ensdl" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2550433.png" id="4_nkfp6"]
+[ext_resource type="Texture2D" uid="uid://dqjiv5rkdwtta" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Corazon-removebg-preview.png" id="5_r2qh3"]
+[ext_resource type="Script" uid="uid://520qfhotfyg1" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/corazon_barra.gd" id="6_7ymee"]
+[ext_resource type="Script" uid="uid://dqkm28joaxg0j" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/gestion_dinero.gd" id="7_88mrg"]
+[ext_resource type="Script" uid="uid://du21sr1ce6dim" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/gestion_barras.gd" id="8_h4van"]
+[ext_resource type="Script" uid="uid://eau6v6n2fb17" path="res://TiposDeEnergiaMinijuego/EscenasEnergia/animador.gd" id="9_e70pd"]
+[ext_resource type="Texture2D" uid="uid://0veyf1px5ay7" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Habitacion-removebg-preview.png" id="10_jjp3l"]
+[ext_resource type="Script" uid="uid://reepuhry5268" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/habitacion.gd" id="11_guna5"]
+[ext_resource type="Texture2D" uid="uid://bvled6t8fs7o6" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Habitacion 2.png" id="12_4ts01"]
+[ext_resource type="Texture2D" uid="uid://d0f7qtjgld7i" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Garaje.png" id="13_1d6te"]
+[ext_resource type="Texture2D" uid="uid://bivgop36wjq5h" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Cuarto de lavar.png" id="14_tkyxh"]
+
+[sub_resource type="Animation" id="Animation_05p3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4o2i1"]
+resource_name = "parpadeo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kbqsr"]
+_data = {
+&"RESET": SubResource("Animation_05p3a"),
+&"parpadeo": SubResource("Animation_4o2i1")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5j6e"]
+texture = ExtResource("3_6uidl")
+
+[node name="CasaDebug" type="Node2D" unique_id=804389017]
+
+[node name="UI" type="Node2D" parent="." unique_id=407701826]
+
+[node name="Background" type="Sprite2D" parent="UI" unique_id=1508077971]
+position = Vector2(575.5, 324.50003)
+scale = Vector2(0.8006944, 0.633789)
+texture = ExtResource("1_wtby8")
+
+[node name="DineroSprite" type="Sprite2D" parent="UI" unique_id=426989578]
+position = Vector2(977, 64)
+scale = Vector2(0.14076442, 0.11656356)
+texture = ExtResource("2_xj15n")
+
+[node name="DineroTotal" type="Label" parent="UI" unique_id=1719085915]
+offset_left = 1006.0
+offset_top = 32.0
+offset_right = 1083.0
+offset_bottom = 95.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 45
+text = "100"
+
+[node name="AnimationDinero" type="AnimationPlayer" parent="UI/DineroTotal" unique_id=1731846734]
+libraries/ = SubResource("AnimationLibrary_kbqsr")
+
+[node name="ProgressBarEnergia" type="ProgressBar" parent="UI" unique_id=1191884739]
+offset_left = 485.0
+offset_top = 43.0
+offset_right = 703.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/fill = SubResource("StyleBoxTexture_p5j6e")
+min_value = 1.0
+value = 50.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/ProgressBarEnergia" unique_id=2142811672]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnergiaSimbolo" type="Sprite2D" parent="UI/ProgressBarEnergia" unique_id=166682670]
+position = Vector2(254, 27)
+scale = Vector2(0.122759454, 0.11515074)
+texture = ExtResource("4_nkfp6")
+
+[node name="ProgressBarContaminacion" type="ProgressBar" parent="UI" unique_id=560033463]
+offset_left = 482.0
+offset_top = 543.0
+offset_right = 700.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/fill = SubResource("StyleBoxTexture_p5j6e")
+min_value = 1.0
+value = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/ProgressBarContaminacion" unique_id=259302658]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CorazonBarra" type="Sprite2D" parent="UI/ProgressBarContaminacion" unique_id=1472325889]
+position = Vector2(259, 30)
+scale = Vector2(0.3226195, 0.3094175)
+texture = ExtResource("5_r2qh3")
+script = ExtResource("6_7ymee")
+
+[node name="GameManager" type="Node2D" parent="." unique_id=1265059995]
+
+[node name="GestionDinero" type="Node2D" parent="GameManager" unique_id=1941629719 node_paths=PackedStringArray("labelDinero")]
+script = ExtResource("7_88mrg")
+labelDinero = NodePath("")
+
+[node name="GestionBarras" type="Node2D" parent="GameManager" unique_id=1153661281]
+script = ExtResource("8_h4van")
+
+[node name="Animador" type="Node2D" parent="GameManager" unique_id=672636586 node_paths=PackedStringArray("animacionDineroLabel", "animacionVientoLabel", "animacionVientoFuerte", "animacionDiaLabel")]
+script = ExtResource("9_e70pd")
+animacionDineroLabel = NodePath("")
+animacionVientoLabel = NodePath("")
+animacionVientoFuerte = NodePath("")
+animacionDiaLabel = NodePath("")
+
+[node name="Casa" type="Node2D" parent="." unique_id=1112871029]
+
+[node name="habitacion" type="Sprite2D" parent="Casa" unique_id=1823535715 node_paths=PackedStringArray("barraEnergia", "habitacion2", "garaje", "cuartoLavar", "gestionBarrasNodo")]
+position = Vector2(482.70532, 260.96017)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_jjp3l")
+script = ExtResource("11_guna5")
+barraEnergia = NodePath("")
+habitacion2 = NodePath("../Habitacion2")
+garaje = NodePath("../Garaje")
+cuartoLavar = NodePath("../CuartoDeLavar")
+gestionBarrasNodo = NodePath("")
+
+[node name="HabitacionTimer" type="Timer" parent="Casa/habitacion" unique_id=1676271380]
+autostart = true
+
+[node name="Habitacion2" type="Sprite2D" parent="Casa" unique_id=1079889510]
+position = Vector2(646.8, 261.8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_4ts01")
+
+[node name="Habitacion2Timer" type="Timer" parent="Casa/Habitacion2" unique_id=1922096326]
+autostart = true
+
+[node name="Garaje" type="Sprite2D" parent="Casa" unique_id=1081941189]
+position = Vector2(483, 353)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_1d6te")
+
+[node name="GarajeTimer" type="Timer" parent="Casa/Garaje" unique_id=1948137730]
+autostart = true
+
+[node name="CuartoDeLavar" type="Sprite2D" parent="Casa" unique_id=1773926561]
+position = Vector2(648, 352)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_tkyxh")
+
+[node name="LavarTimer" type="Timer" parent="Casa/CuartoDeLavar" unique_id=404140562]
+autostart = true
+
+[connection signal="timeout" from="Casa/habitacion/HabitacionTimer" to="Casa/habitacion" method="_on_timer_timeout"]
+[connection signal="timeout" from="Casa/Habitacion2/Habitacion2Timer" to="Casa/habitacion" method="_on_habitacion_2_timer_timeout"]
+[connection signal="timeout" from="Casa/Garaje/GarajeTimer" to="Casa/habitacion" method="_on_garaje_timer_timeout"]
+[connection signal="timeout" from="Casa/CuartoDeLavar/LavarTimer" to="Casa/habitacion" method="_on_lavar_timer_timeout"]
