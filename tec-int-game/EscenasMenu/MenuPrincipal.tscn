@@ -13,13 +13,21 @@
 [ext_resource type="Texture2D" uid="uid://d3plpj1sreqlo" path="res://UI_Menus/Salir_Icono.png" id="10_qw2dv"]
 [ext_resource type="FontFile" uid="uid://d4cqwdauio4fv" path="res://UI_Menus/Baloo-Regular.ttf" id="11_5h7w3"]
 
-[node name="Menu" type="Node2D" unique_id=1903223931]
+[node name="Menu" type="Node2D" unique_id=1903223931 node_paths=PackedStringArray("botonSalir", "botonJugar", "botonPuntajes", "circuloJugar", "circuloPuntajes")]
 script = ExtResource("1_20qv4")
+botonSalir = NodePath("UI/CirculoSalir")
+botonJugar = NodePath("UI/RectanguloJugar")
+botonPuntajes = NodePath("UI/RectanguloPuntajes")
+circuloJugar = NodePath("UI/RectanguloJugar/CirculoPlay")
+circuloPuntajes = NodePath("UI/RectanguloPuntajes/CirculoPuntajes")
+
+[node name="Guardado" type="Node2D" parent="." unique_id=1731608308]
+script = ExtResource("2_0ftpc")
 
 [node name="UI" type="Node2D" parent="." unique_id=1829577130]
 
 [node name="FondoMenus" type="Sprite2D" parent="UI" unique_id=1901501972]
-position = Vector2(960, 543)
+position = Vector2(961, 545.5)
 scale = Vector2(1.3375, 1.0644531)
 texture = ExtResource("2_c0x80")
 
@@ -99,9 +107,12 @@ theme_override_fonts/font = ExtResource("11_5h7w3")
 theme_override_font_sizes/font_size = 140
 text = "Tec-Int game"
 
-[node name="Guardado" type="Node2D" parent="." unique_id=1731608308]
-script = ExtResource("2_0ftpc")
-
+[connection signal="mouse_entered" from="UI/RectanguloJugar/BotonPlay" to="." method="_on_boton_play_mouse_entered"]
+[connection signal="mouse_exited" from="UI/RectanguloJugar/BotonPlay" to="." method="_on_boton_play_mouse_exited"]
 [connection signal="pressed" from="UI/RectanguloJugar/BotonPlay" to="." method="_on_boton_play_pressed"]
+[connection signal="mouse_entered" from="UI/RectanguloPuntajes/BotonPuntajes" to="." method="_on_boton_puntajes_mouse_entered"]
+[connection signal="mouse_exited" from="UI/RectanguloPuntajes/BotonPuntajes" to="." method="_on_boton_puntajes_mouse_exited"]
 [connection signal="pressed" from="UI/RectanguloPuntajes/BotonPuntajes" to="." method="_on_boton_puntajes_pressed"]
+[connection signal="mouse_entered" from="UI/CirculoSalir/BotonSalir" to="." method="_on_boton_salir_mouse_entered"]
+[connection signal="mouse_exited" from="UI/CirculoSalir/BotonSalir" to="." method="_on_boton_salir_mouse_exited"]
 [connection signal="pressed" from="UI/CirculoSalir/BotonSalir" to="." method="_on_boton_salir_pressed"]

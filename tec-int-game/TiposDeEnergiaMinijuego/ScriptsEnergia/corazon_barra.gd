@@ -35,5 +35,6 @@ func _process(delta: float) -> void:
 	if cambioAnterior != cambioValor:
 		cambioAnterior = cambioValor
 		animador.corazonParpadeo()
+		Sonidos.audioCorazon.play()
 	
 	

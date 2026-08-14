@@ -35,23 +35,38 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if DatosGlobales.plantaNuclearActivo == true and barraUranio.value > 1:
 		gestionBarrasNodo.cambiarBarra(valorEnergiaNuclear, delta, true, barraEnergia)
-		gestionBarrasNodo.cambiarBarra(2.5, delta, true, barraContaminacion) 
-		gestionBarrasNodo.cambiarBarra(4, delta, false, barraUranio)
+		gestionBarrasNodo.cambiarBarra(1, delta, true, barraContaminacion) 
+		gestionBarrasNodo.cambiarBarra(2, delta, false, barraUranio)
+		DatosGlobales.contaminacionFinal = barraContaminacion.value
 	
 	if barraUranio.value == 1:
+		if DatosGlobales.plantaNuclearActivo == true: 
+			electricidadN.visible = false
+			energiaPrimaria.texture = rectanguloDesactivado
+			energiaSecundaria.texture = rectanguloDesactivado
+			gestionBarrasNodo.cambiarLabel(labelEPN, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
+			gestionBarrasNodo.cambiarLabel(labelESN, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+			gestionBarrasNodo.cambiarFlechas(valorEnergiaNuclear, false, labelPositivo)
+		
 		gestionBarrasNodo.cambiarLabel(botonNuclear, "Invalido", Color(0.601, 0.601, 0.601, 1.0))
 		DatosGlobales.plantaNuclearActivo = false
+	elif (DatosGlobales.energiaActiva == true or gestionDineroNodo.dineroActual < dineroNuclear) and DatosGlobales.plantaNuclearActivo == false:
+		gestionBarrasNodo.cambiarLabel(botonNuclear, "Activar", Color(0.601, 0.601, 0.601, 1.0))
+	elif DatosGlobales.energiaActiva == false and DatosGlobales.plantaNuclearActivo == false:
+		gestionBarrasNodo.cambiarLabel(botonNuclear, "Activar", Color(0.0, 0.871, 0.224, 1.0))
 		
 
 func _on_button_nuclear_pressed() -> void:
+	if  gestionDineroNodo.dineroActual < dineroNuclear:
+		animador.SinDinero()
 	
 	if (gestionDineroNodo.dineroActual >= dineroNuclear or DatosGlobales.plantaNuclearActivo == true) and DatosGlobales.candadoNuclear == false:
 		
 		match(DatosGlobales.plantaNuclearActivo):
 			true:
 				if barraUranio.value > 1: 
+					Sonidos.audioDesactivarTE.play()
 					DatosGlobales.plantaNuclearActivo = false
-					gestionBarrasNodo.cambiarLabel(botonNuclear, "Activar", Color(0.0, 0.871, 0.224, 1.0))
 					energiaPrimaria.texture = rectanguloDesactivado
 					energiaSecundaria.texture = rectanguloDesactivado
 					electricidadN.visible = false
@@ -61,7 +76,10 @@ func _on_button_nuclear_pressed() -> void:
 					
 				
 			false:
-				if DatosGlobales.energiaActiva == false and barraUranio.value > 1:
+				if DatosGlobales.energiaActiva == true and barraUranio.value > 1:
+					animador.SoloUna()
+				elif DatosGlobales.energiaActiva == false and barraUranio.value > 1:
+					Sonidos.audioActivarTE.play()
 					labelValor = gestionDineroNodo.cambiar_dinero(dineroNuclear)
 					animador.dineroParpadeo()
 					
@@ -71,6 +89,6 @@ func _on_button_nuclear_pressed() -> void:
 					energiaPrimaria.texture = rectanguloNuclear
 					energiaSecundaria.texture = rectanguloElectrico
 					electricidadN.visible = true
-					gestionBarrasNodo.cambiarLabel(labelEPN, "Energia solar", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEPN, "Energia nuclear", Color(0.0, 0.0, 0.0, 1.0))
 					gestionBarrasNodo.cambiarLabel(labelESN, "Energia electrica", Color(0.0, 0.0, 0.0, 1.0))
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaNuclear, true, labelPositivo)

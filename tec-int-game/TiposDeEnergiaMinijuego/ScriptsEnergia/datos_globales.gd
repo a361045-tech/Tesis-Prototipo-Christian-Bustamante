@@ -2,6 +2,7 @@ extends Node2D
 
 var energiaActiva = false
 var nivelViento = 1
+var deDia = true
 var usuarios = []
 
 var panelSolarActivo = false
@@ -23,6 +24,8 @@ var candadoPanel = false
 var candadoMolino = true
 var candadoNuclear = true
 var candadoTermo = true
+
+var valorHabitacionesSumado = 0
 
 var save_path = "user://save_game.dat"
 

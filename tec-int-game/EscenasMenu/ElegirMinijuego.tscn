@@ -1,34 +1,85 @@
 [gd_scene format=3 uid="uid://c7grfcj645xg3"]
 
 [ext_resource type="Script" uid="uid://chfn103aa2vse" path="res://ScriptsMenus/elegir_minijuegoBotones.gd" id="1_usjtf"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="2_lrrfv"]
+[ext_resource type="Texture2D" uid="uid://dddmho3g1yjuw" path="res://UI_Menus/CirculoSalir.png" id="3_mcura"]
+[ext_resource type="Texture2D" uid="uid://bxat1w278nly7" path="res://UI_Menus/RectangleTE.png" id="4_2rwr6"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="5_degrv"]
+[ext_resource type="Texture2D" uid="uid://c5thu3mlxaah5" path="res://UI_Menus/TiposDeEnergia_Icono.png" id="6_t6402"]
+[ext_resource type="Texture2D" uid="uid://vqy3a58j5dct" path="res://UI_Menus/FlechaRegresar.png" id="7_uoqfm"]
 
-[node name="ElegirMinijuegoMenu" type="Node2D" unique_id=59473627]
+[node name="ElegirMinijuegoMenu" type="Node2D" unique_id=59473627 node_paths=PackedStringArray("botonRegresar", "botonTE")]
 script = ExtResource("1_usjtf")
+botonRegresar = NodePath("CirculoSalir")
+botonTE = NodePath("RectanguloTE")
 
-[node name="Label" type="Label" parent="." unique_id=301626074]
-offset_left = 415.0
-offset_top = 22.0
-offset_right = 713.0
-offset_bottom = 135.0
+[node name="FondoMenus" type="Sprite2D" parent="." unique_id=46580745]
+position = Vector2(961, 545.5)
+scale = Vector2(1.337, 1.064)
+texture = ExtResource("2_lrrfv")
+
+[node name="CirculoSalir" type="Sprite2D" parent="." unique_id=1040999683]
+position = Vector2(122, 113)
+texture = ExtResource("3_mcura")
+
+[node name="Regresar" type="Button" parent="CirculoSalir" unique_id=2072957432]
+offset_left = -93.0
+offset_top = -84.0
+offset_right = 99.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 25
+flat = true
+
+[node name="FlechaRegresar" type="Sprite2D" parent="CirculoSalir" unique_id=1857546518]
+position = Vector2(-9.75, -2.25)
+scale = Vector2(1.2696971, 1.4629631)
+texture = ExtResource("7_uoqfm")
+
+[node name="RectanguloTE" type="Sprite2D" parent="." unique_id=356041044]
+position = Vector2(482, 393)
+scale = Vector2(1.0277777, 1.0128206)
+texture = ExtResource("4_2rwr6")
+
+[node name="TiposDeEnergia" type="Button" parent="RectanguloTE" unique_id=2116230025]
+offset_left = -178.05408
+offset_top = -148.10126
+offset_right = 168.18918
+offset_bottom = 145.13925
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
+flat = true
+
+[node name="TiposDeEnergiaIcono" type="Sprite2D" parent="RectanguloTE" unique_id=755995742]
+position = Vector2(0.9729786, 15.79748)
+scale = Vector2(1.1272249, 1.0595863)
+texture = ExtResource("6_t6402")
+
+[node name="TE_Label" type="Label" parent="RectanguloTE" unique_id=1232898965]
+offset_left = -151.7838
+offset_top = -145.13924
+offset_right = 159.2162
+offset_bottom = -95.13924
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Tipos de energia"
+horizontal_alignment = 1
+
+[node name="ElegirMinijuegoLabel" type="Label" parent="." unique_id=301626074]
+offset_left = 681.0
+offset_top = 14.0
+offset_right = 1307.0
+offset_bottom = 239.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 90
 text = "ElegirMinijuego
 "
 
-[node name="TiposDeEnergia" type="Button" parent="." unique_id=2116230025]
-offset_left = 176.0
-offset_top = 175.0
-offset_right = 410.0
-offset_bottom = 305.0
-theme_override_font_sizes/font_size = 25
-text = "Tipos de energia"
-
-[node name="Regresar" type="Button" parent="." unique_id=2072957432]
-offset_left = 15.0
-offset_top = 18.0
-offset_right = 155.0
-offset_bottom = 94.0
-theme_override_font_sizes/font_size = 25
-text = "Regresar"
-
-[connection signal="pressed" from="TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]
-[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="mouse_entered" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_entered"]
+[connection signal="mouse_exited" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_exited"]
+[connection signal="pressed" from="CirculoSalir/Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="mouse_entered" from="RectanguloTE/TiposDeEnergia" to="." method="_on_tipos_de_energia_mouse_entered"]
+[connection signal="mouse_exited" from="RectanguloTE/TiposDeEnergia" to="." method="_on_tipos_de_energia_mouse_exited"]
+[connection signal="pressed" from="RectanguloTE/TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]

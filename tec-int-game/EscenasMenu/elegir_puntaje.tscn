@@ -1,34 +1,84 @@
 [gd_scene format=3 uid="uid://gmlis76qii2u"]
 
 [ext_resource type="Script" uid="uid://dgbhvrm50ye0o" path="res://ScriptsMenus/ElegirPuntajeBotones.gd" id="1_inbec"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="2_bvkek"]
+[ext_resource type="Texture2D" uid="uid://dddmho3g1yjuw" path="res://UI_Menus/CirculoSalir.png" id="3_p2qs3"]
+[ext_resource type="Texture2D" uid="uid://vqy3a58j5dct" path="res://UI_Menus/FlechaRegresar.png" id="4_73h1n"]
+[ext_resource type="Texture2D" uid="uid://debxc0rwa235t" path="res://UI_Menus/Rectangle 7.png" id="5_bvkek"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="6_amkdo"]
+[ext_resource type="Texture2D" uid="uid://c5thu3mlxaah5" path="res://UI_Menus/TiposDeEnergia_Icono.png" id="7_6kwfp"]
 
-[node name="Elegir_Puntaje" type="Node2D" unique_id=860004823]
+[node name="Elegir_Puntaje" type="Node2D" unique_id=860004823 node_paths=PackedStringArray("botonRegresar", "botonTEP")]
 script = ExtResource("1_inbec")
+botonRegresar = NodePath("CirculoSalir")
+botonTEP = NodePath("RectangleTEP")
+
+[node name="FondoMenus" type="Sprite2D" parent="." unique_id=424307751]
+position = Vector2(961, 545.5)
+scale = Vector2(1.337, 1.064)
+texture = ExtResource("2_bvkek")
+
+[node name="CirculoSalir" type="Sprite2D" parent="." unique_id=421288698]
+position = Vector2(122, 113)
+texture = ExtResource("3_p2qs3")
+
+[node name="FlechaRegresar" type="Sprite2D" parent="CirculoSalir" unique_id=1717675831]
+position = Vector2(-9.75, -2.25)
+scale = Vector2(1.2696971, 1.4629631)
+texture = ExtResource("4_73h1n")
+
+[node name="Regresar" type="Button" parent="CirculoSalir" unique_id=2134997829]
+offset_left = -102.0
+offset_top = -100.0
+offset_right = 101.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 25
+flat = true
+
+[node name="RectangleTEP" type="Sprite2D" parent="." unique_id=1219317958]
+position = Vector2(482, 393)
+scale = Vector2(1.028, 1.013)
+texture = ExtResource("5_bvkek")
+
+[node name="TE_Label" type="Label" parent="RectangleTEP" unique_id=784053904]
+offset_left = -151.7838
+offset_top = -145.13924
+offset_right = 159.2162
+offset_bottom = -95.13924
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_amkdo")
+theme_override_font_sizes/font_size = 40
+text = "Tipos de energia"
+horizontal_alignment = 1
+
+[node name="TiposDeEnergiaIcono" type="Sprite2D" parent="RectangleTEP" unique_id=394285218]
+position = Vector2(0.9729786, 15.79748)
+scale = Vector2(1.1272249, 1.0595863)
+texture = ExtResource("7_6kwfp")
+
+[node name="TiposDeEnergia" type="Button" parent="RectangleTEP" unique_id=1754826419]
+offset_left = -176.07004
+offset_top = -153.99802
+offset_right = 188.92996
+offset_bottom = 159.00198
+theme_override_font_sizes/font_size = 25
+text = "
+"
+flat = true
 
 [node name="puntajeDeMinijuego" type="Label" parent="." unique_id=879230792]
-offset_left = 386.0
-offset_top = 28.0
-offset_right = 782.0
-offset_bottom = 70.0
-theme_override_font_sizes/font_size = 30
+offset_left = 454.0
+offset_top = 23.0
+offset_right = 1524.0
+offset_bottom = 128.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_amkdo")
+theme_override_font_sizes/font_size = 85
 text = "Elegir puntaje de minijuego"
 
-[node name="Regresar" type="Button" parent="." unique_id=2134997829]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 185.0
-offset_bottom = 84.0
-theme_override_font_sizes/font_size = 25
-text = "Regresar"
-
-[node name="TiposDeEnergia" type="Button" parent="." unique_id=1754826419]
-offset_left = 184.0
-offset_top = 117.0
-offset_right = 424.0
-offset_bottom = 234.0
-theme_override_font_sizes/font_size = 25
-text = "Tipos de energia
-"
-
-[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]
-[connection signal="pressed" from="TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]
+[connection signal="mouse_entered" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_entered"]
+[connection signal="mouse_exited" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_exited"]
+[connection signal="pressed" from="CirculoSalir/Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="mouse_entered" from="RectangleTEP/TiposDeEnergia" to="." method="_on_tipos_de_energia_mouse_entered"]
+[connection signal="mouse_exited" from="RectangleTEP/TiposDeEnergia" to="." method="_on_tipos_de_energia_mouse_exited"]
+[connection signal="pressed" from="RectangleTEP/TiposDeEnergia" to="." method="_on_tipos_de_energia_pressed"]

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dk2t7v266nltg"]
+
+[ext_resource type="Script" uid="uid://d10vns57mbmr1" path="res://ScriptsMenus/sonidos.gd" id="1_twkjy"]
+[ext_resource type="AudioStream" uid="uid://cuf2e4pl3fkj6" path="res://EfectosDeSonidoMenu/juniorsoundays-ui-sound-01-527815.mp3" id="2_biwv6"]
+[ext_resource type="AudioStream" uid="uid://ccf5dh0huyony" path="res://EfectosDeSonidoMenu/jimgor33-loading-main-menu-145077.mp3" id="3_biwv6"]
+[ext_resource type="AudioStream" uid="uid://cyg4knhbfnnan" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/turning_pages-winding-village-roads-upbeat-medieval-lofi-390678.mp3" id="4_6onff"]
+[ext_resource type="AudioStream" uid="uid://b6wfv3g1d1607" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/biww-strong-wind-gust-sound-effect-561966.mp3" id="5_cp6aa"]
+[ext_resource type="AudioStream" uid="uid://ce5eprgwtbwys" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/freesound_community-single-heartbeat-hq_beatsmith-108037.mp3" id="6_78ji8"]
+[ext_resource type="AudioStream" uid="uid://cdj36rkqbeycb" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/litupsubway-key-collect-sfx-522219.mp3" id="7_qgs8i"]
+[ext_resource type="AudioStream" uid="uid://cxm7vhuedl4kl" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/rescopicsound-ui-beep-menu-positive-228336.mp3" id="8_03ki3"]
+[ext_resource type="AudioStream" uid="uid://dibq6wseqeen2" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/rescopicsound-ui-click-menu-modern-interface-select-large-230474.mp3" id="9_1wuoe"]
+[ext_resource type="AudioStream" uid="uid://bnd31vipevwth" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/tithuh-level-up-02-528919.mp3" id="10_7qlkm"]
+[ext_resource type="AudioStream" uid="uid://vsqjxqc322g1" path="res://TiposDeEnergiaMinijuego/EfectosDeSonidoTE/universfield-bonus-earned-142268.mp3" id="11_qgs8i"]
+
+[node name="Sonidos" type="Node2D" unique_id=1189123492]
+script = ExtResource("1_twkjy")
+
+[node name="Click menu" type="AudioStreamPlayer2D" parent="." unique_id=448200516]
+stream = ExtResource("2_biwv6")
+volume_db = 1.0
+
+[node name="Musica menu" type="AudioStreamPlayer2D" parent="." unique_id=1402877245]
+stream = ExtResource("3_biwv6")
+volume_db = 1.0
+autoplay = true
+
+[node name="Musica MinijuegoTE" type="AudioStreamPlayer2D" parent="." unique_id=1999335616]
+stream = ExtResource("4_6onff")
+volume_db = 1.0
+
+[node name="Viento Efecto" type="AudioStreamPlayer2D" parent="." unique_id=1459041997]
+stream = ExtResource("5_cp6aa")
+volume_db = 1.0
+
+[node name="Corazon Palpita" type="AudioStreamPlayer2D" parent="." unique_id=1408556881]
+stream = ExtResource("6_78ji8")
+volume_db = 1.0
+
+[node name="Desbloqueo" type="AudioStreamPlayer2D" parent="." unique_id=1805823626]
+stream = ExtResource("7_qgs8i")
+volume_db = 1.0
+
+[node name="ActivarTE" type="AudioStreamPlayer2D" parent="." unique_id=345942826]
+stream = ExtResource("8_03ki3")
+volume_db = 1.0
+
+[node name="DesactivarTE" type="AudioStreamPlayer2D" parent="." unique_id=1488837704]
+stream = ExtResource("9_1wuoe")
+volume_db = 1.0
+
+[node name="CambioDia" type="AudioStreamPlayer2D" parent="." unique_id=2146309500]
+stream = ExtResource("10_7qlkm")
+volume_db = 1.0
+
+[node name="ResultadosTE" type="AudioStreamPlayer2D" parent="." unique_id=367082269]
+stream = ExtResource("11_qgs8i")
+volume_db = 1.0

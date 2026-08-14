@@ -1,57 +1,151 @@
 [gd_scene format=3 uid="uid://1w4vbcvqyn0y"]
 
 [ext_resource type="Script" uid="uid://bxaw0xssx6743" path="res://ScriptsMenus/RegistroBotones.gd" id="1_ct2pj"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="2_fa4nm"]
+[ext_resource type="Texture2D" uid="uid://n72i46o7iuvw" path="res://UI_Menus/BaseRegistrarte.png" id="3_cud6y"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="4_v3l4t"]
+[ext_resource type="Texture2D" uid="uid://cdo6waugcu3dh" path="res://UI_Menus/EscribirrEspacio.png" id="5_n8p3s"]
+[ext_resource type="Texture2D" uid="uid://bhjl72tav4obn" path="res://UI_Menus/BotonRegistrarRectangulo.png" id="6_m6olq"]
 
-[node name="Registro" type="Node2D" unique_id=764009104 node_paths=PackedStringArray("registroNombre", "registroAP", "registroAM", "registroGrupo")]
+[node name="Registro" type="Node2D" unique_id=764009104 node_paths=PackedStringArray("registroNombre", "registroAP", "registroAM", "registroGrupo", "botonRegistrar")]
 script = ExtResource("1_ct2pj")
-registroNombre = NodePath("Nombres")
-registroAP = NodePath("ApellidoPaterno")
-registroAM = NodePath("ApellidoMaterno")
-registroGrupo = NodePath("Grupo")
+registroNombre = NodePath("EscribirrEspacioNombres/Nombres")
+registroAP = NodePath("EscribirrEspacioAP/ApellidoPaterno")
+registroAM = NodePath("EscribirrEspacioAM/ApellidoMaterno")
+registroGrupo = NodePath("EscribirrEspacioGrupo/Grupo")
+botonRegistrar = NodePath("BotonRegistrarRectangulo")
 
-[node name="Registrate" type="Label" parent="." unique_id=1378370153]
-offset_left = 482.0
-offset_top = 46.0
-offset_right = 657.0
-offset_bottom = 101.0
+[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1628115485]
+position = Vector2(961, 545.5)
+scale = Vector2(1.337, 1.064)
+texture = ExtResource("2_fa4nm")
+
+[node name="BaseRegistrarte" type="Sprite2D" parent="." unique_id=603409601]
+position = Vector2(943, 522)
+texture = ExtResource("3_cud6y")
+
+[node name="PuntajeLabel" type="Label" parent="." unique_id=1769451723]
+offset_left = 723.0
+offset_top = 130.0
+offset_right = 1140.0
+offset_bottom = 235.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 85
+text = "Registrate"
+
+[node name="EscribirrEspacioNombres" type="Sprite2D" parent="." unique_id=709275288]
+position = Vector2(1159, 287)
+texture = ExtResource("5_n8p3s")
+
+[node name="NombreLabel" type="Label" parent="EscribirrEspacioNombres" unique_id=1433903485]
+offset_left = -634.0
+offset_top = -40.0
+offset_right = -391.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 55
+text = "Nombres:"
+
+[node name="Nombres" type="LineEdit" parent="EscribirrEspacioNombres" unique_id=1764049303]
+offset_left = -217.0
+offset_top = -45.0
+offset_right = 233.0
+offset_bottom = 41.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 theme_override_font_sizes/font_size = 40
-text = "	Registrate"
+placeholder_text = "Nombres"
+flat = true
 
-[node name="RegistrarBoton" type="Button" parent="." unique_id=78817861]
-offset_left = 477.0
-offset_top = 463.0
-offset_right = 675.0
-offset_bottom = 532.0
-theme_override_font_sizes/font_size = 30
+[node name="EscribirrEspacioAP" type="Sprite2D" parent="." unique_id=1208474613]
+position = Vector2(1161, 387)
+texture = ExtResource("5_n8p3s")
+
+[node name="ApellidoPLabel" type="Label" parent="EscribirrEspacioAP" unique_id=915047124]
+offset_left = -636.0
+offset_top = -40.0
+offset_right = -206.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 50
+text = "Apellido paterno:"
+
+[node name="ApellidoPaterno" type="LineEdit" parent="EscribirrEspacioAP" unique_id=1930676262]
+offset_left = -217.0
+offset_top = -49.0
+offset_right = 234.0
+offset_bottom = 36.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Apellido paterno"
+flat = true
+
+[node name="EscribirrEspacioAM" type="Sprite2D" parent="." unique_id=697366664]
+position = Vector2(1163, 495)
+texture = ExtResource("5_n8p3s")
+
+[node name="ApellidoMLabel" type="Label" parent="EscribirrEspacioAM" unique_id=1544210904]
+offset_left = -636.0
+offset_top = -40.0
+offset_right = -206.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 50
+text = "Apellido materno:"
+
+[node name="ApellidoMaterno" type="LineEdit" parent="EscribirrEspacioAM" unique_id=1259439045]
+offset_left = -220.0
+offset_top = -45.0
+offset_right = 216.0
+offset_bottom = 33.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Apellido materno"
+flat = true
+
+[node name="EscribirrEspacioGrupo" type="Sprite2D" parent="." unique_id=803489716]
+position = Vector2(1163, 604)
+texture = ExtResource("5_n8p3s")
+
+[node name="ApellidoMLabel" type="Label" parent="EscribirrEspacioGrupo" unique_id=688616826]
+offset_left = -632.0
+offset_top = -38.0
+offset_right = -202.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 60
+text = "Grupo:"
+
+[node name="Grupo" type="LineEdit" parent="EscribirrEspacioGrupo" unique_id=1339633249]
+offset_left = -220.0
+offset_top = -44.0
+offset_right = 239.0
+offset_bottom = 40.0
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Grupo"
+flat = true
+
+[node name="BotonRegistrarRectangulo" type="Sprite2D" parent="." unique_id=1115696408]
+position = Vector2(936, 761)
+texture = ExtResource("6_m6olq")
+
+[node name="RegistrarBoton" type="Button" parent="BotonRegistrarRectangulo" unique_id=78817861]
+offset_left = -139.0
+offset_top = -56.0
+offset_right = 138.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 45
 text = "Registrar
 "
+flat = true
 
-[node name="Nombres" type="LineEdit" parent="." unique_id=1764049303]
-offset_left = 481.0
-offset_top = 133.0
-offset_right = 672.0
-offset_bottom = 187.0
-placeholder_text = "Nombres"
-
-[node name="ApellidoPaterno" type="LineEdit" parent="." unique_id=1930676262]
-offset_left = 480.0
-offset_top = 198.0
-offset_right = 671.0
-offset_bottom = 252.0
-placeholder_text = "Apellido paterno"
-
-[node name="ApellidoMaterno" type="LineEdit" parent="." unique_id=1259439045]
-offset_left = 480.0
-offset_top = 267.0
-offset_right = 671.0
-offset_bottom = 321.0
-placeholder_text = "Apellido materno"
-
-[node name="Grupo" type="LineEdit" parent="." unique_id=1339633249]
-offset_left = 481.0
-offset_top = 331.0
-offset_right = 672.0
-offset_bottom = 385.0
-placeholder_text = "Grupo"
-
-[connection signal="pressed" from="RegistrarBoton" to="." method="_on_registrar_boton_pressed"]
+[connection signal="mouse_entered" from="BotonRegistrarRectangulo/RegistrarBoton" to="." method="_on_registrar_boton_mouse_entered"]
+[connection signal="mouse_exited" from="BotonRegistrarRectangulo/RegistrarBoton" to="." method="_on_registrar_boton_mouse_exited"]
+[connection signal="pressed" from="BotonRegistrarRectangulo/RegistrarBoton" to="." method="_on_registrar_boton_pressed"]

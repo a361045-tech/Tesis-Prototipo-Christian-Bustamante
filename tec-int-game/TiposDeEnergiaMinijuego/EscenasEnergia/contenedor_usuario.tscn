@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bh01dnlhslaf1"]
+
+[ext_resource type="Script" uid="uid://wr4yb08yhi7i" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/ContenedoresPuntajes.gd" id="1_5fsti"]
+[ext_resource type="Texture2D" uid="uid://dnpr33oq3fgu2" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleNombreUser.png" id="1_wf23l"]
+[ext_resource type="Texture2D" uid="uid://c5jk1wdmlsb6c" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleFecha.png" id="3_oji1e"]
+[ext_resource type="Texture2D" uid="uid://e67vrew7cpjp" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleTiempo.png" id="4_uylle"]
+[ext_resource type="Texture2D" uid="uid://blxk3440ky4t3" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleCalif.png" id="5_mnwbc"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="6_oji1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oji1e"]
+bg_color = Color(0.75, 0.5745, 0.36, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fsti"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoj2r"]
+bg_color = Color(0.18, 0.9180001, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y64x"]
+bg_color = Color(0, 0.99, 0.14849986, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d1g3"]
+bg_color = Color(0.80666673, 0.88, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="ContenedorUsuario" type="PanelContainer" unique_id=2007360416 node_paths=PackedStringArray("nombre_label", "tiempo_label", "calificacion_label", "fecha_label")]
+custom_minimum_size = Vector2(1325, 150)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_right = 600.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oji1e")
+script = ExtResource("1_5fsti")
+nombre_label = NodePath("MarginContainer/Control/UsuariosContenedor/PanelContainer/NombreLabel")
+tiempo_label = NodePath("MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerT/TiempoLabel")
+calificacion_label = NodePath("MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerC/CalificacionLabel")
+fecha_label = NodePath("MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerF/FechaLabel")
+
+[node name="RectangleNombreUser" type="Sprite2D" parent="." unique_id=93883004]
+visible = false
+position = Vector2(956, 411.99994)
+texture = ExtResource("1_wf23l")
+
+[node name="RectangleFecha" type="Sprite2D" parent="." unique_id=141939639]
+visible = false
+position = Vector2(1291, 513.99994)
+scale = Vector2(1.1975874, 1)
+texture = ExtResource("3_oji1e")
+
+[node name="RectangleTiempo" type="Sprite2D" parent="." unique_id=1442685264]
+visible = false
+position = Vector2(550, 514.99994)
+texture = ExtResource("4_uylle")
+
+[node name="RectangleCalif" type="Sprite2D" parent="." unique_id=1555135044]
+visible = false
+position = Vector2(929.99994, 514.99994)
+scale = Vector2(1.1975874, 1)
+texture = ExtResource("5_mnwbc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1653507516]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1049363831]
+layout_mode = 2
+
+[node name="UsuariosContenedor" type="VBoxContainer" parent="MarginContainer/Control" unique_id=1387065266]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 13.0
+offset_right = 1082.0
+offset_bottom = 166.0
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Control/UsuariosContenedor" unique_id=108524007]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fsti")
+
+[node name="NombreLabel" type="Label" parent="MarginContainer/Control/UsuariosContenedor/PanelContainer" unique_id=1805792707]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_oji1e")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/UsuariosContenedor" unique_id=1424275785]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainerC" type="PanelContainer" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer" unique_id=29601591]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yoj2r")
+
+[node name="CalificacionLabel" type="Label" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerC" unique_id=1676485981]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_oji1e")
+theme_override_font_sizes/font_size = 30
+
+[node name="PanelContainerT" type="PanelContainer" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer" unique_id=117618946]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2y64x")
+
+[node name="TiempoLabel" type="Label" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerT" unique_id=846930420]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_oji1e")
+theme_override_font_sizes/font_size = 30
+
+[node name="PanelContainerF" type="PanelContainer" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer" unique_id=1777273051]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5d1g3")
+
+[node name="FechaLabel" type="Label" parent="MarginContainer/Control/UsuariosContenedor/HBoxContainer/PanelContainerF" unique_id=558322923]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_oji1e")
+theme_override_font_sizes/font_size = 30

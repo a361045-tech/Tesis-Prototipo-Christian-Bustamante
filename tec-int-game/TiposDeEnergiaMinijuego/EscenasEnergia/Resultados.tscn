@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://cf66mj1ar1w2t"]
+
+[ext_resource type="Script" uid="uid://bp5tefreu6qdh" path="res://ScriptsMenus/ResultadosBotones.gd" id="1_fqiqj"]
+[ext_resource type="Script" uid="uid://upxswr4wuo72" path="res://ScriptsMenus/guardado.gd" id="2_jp17o"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="3_yxt6v"]
+[ext_resource type="Texture2D" uid="uid://n72i46o7iuvw" path="res://UI_Menus/BaseRegistrarte.png" id="4_tvlev"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="5_bieaf"]
+[ext_resource type="Texture2D" uid="uid://dartpi7syx324" path="res://UI_Menus/RectangleSalirl.png" id="6_vd4hj"]
+[ext_resource type="Texture2D" uid="uid://blevjlxlbwbt0" path="res://UI_Menus/RectangleRepetir.png" id="7_x4jp1"]
+[ext_resource type="Texture2D" uid="uid://djmsups3ltmqj" path="res://UI_Menus/RectangleExcelente.png" id="8_hm51r"]
+
+[node name="PantallaResultados" type="Node2D" unique_id=2011151131 node_paths=PackedStringArray("tiempoLabel", "contaminacionLabel", "calificacionLabel", "guardadoNodo", "contenedorCalificacion", "botonSalir", "botonRepetir")]
+position = Vector2(-1, -1)
+script = ExtResource("1_fqiqj")
+tiempoLabel = NodePath("TiempoLabel/TiempoResultadoLabel")
+contaminacionLabel = NodePath("ContaminacionLabel/ContaminacionResultadoLabel")
+calificacionLabel = NodePath("CalificacionLabel/CalificacionResultadosLabel")
+guardadoNodo = NodePath("Guardado")
+contenedorCalificacion = NodePath("ContenedorCalificacion")
+botonSalir = NodePath("RectangleSalir")
+botonRepetir = NodePath("RectangleRepetir")
+
+[node name="Guardado" type="Node2D" parent="." unique_id=1246074250]
+script = ExtResource("2_jp17o")
+
+[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1072206334]
+position = Vector2(961, 545.5)
+scale = Vector2(1.337, 1.064)
+texture = ExtResource("3_yxt6v")
+
+[node name="BaseRegistrarte" type="Sprite2D" parent="." unique_id=566154100]
+position = Vector2(943, 522)
+texture = ExtResource("4_tvlev")
+
+[node name="ContenedorCalificacion" type="Sprite2D" parent="." unique_id=190775030]
+position = Vector2(1162, 580)
+texture = ExtResource("8_hm51r")
+
+[node name="ResultadosLabel" type="Label" parent="." unique_id=1716552918]
+offset_left = 701.0
+offset_top = 130.0
+offset_right = 1198.0
+offset_bottom = 235.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 85
+text = "¡Resultados!"
+
+[node name="TiempoLabel" type="Label" parent="." unique_id=1525116615]
+offset_left = 558.0
+offset_top = 267.0
+offset_right = 755.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 50
+text = "Tiempo: "
+
+[node name="TiempoResultadoLabel" type="Label" parent="TiempoLabel" unique_id=1547099100]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 3.0
+offset_right = 846.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="ContaminacionLabel" type="Label" parent="." unique_id=2137381515]
+offset_left = 565.0
+offset_top = 391.0
+offset_right = 941.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 45
+text = "Contaminación: "
+
+[node name="ContaminacionResultadoLabel" type="Label" parent="ContaminacionLabel" unique_id=419926941]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 7.0
+offset_right = 751.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="CalificacionLabel" type="Label" parent="." unique_id=1245135773]
+offset_left = 569.0
+offset_top = 539.0
+offset_right = 945.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 50
+text = "Calificacion: "
+
+[node name="CalificacionResultadosLabel" type="Label" parent="CalificacionLabel" unique_id=790770459]
+layout_mode = 0
+offset_left = 466.0
+offset_top = -2.0
+offset_right = 711.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+
+[node name="RectangleSalir" type="Sprite2D" parent="." unique_id=345875414]
+position = Vector2(1125, 786)
+texture = ExtResource("6_vd4hj")
+
+[node name="SalirBoton" type="Button" parent="RectangleSalir" unique_id=719285089]
+offset_left = -103.0
+offset_top = -62.0
+offset_right = 104.0
+offset_bottom = 56.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 45
+text = "Salir
+"
+flat = true
+
+[node name="RectangleRepetir" type="Sprite2D" parent="." unique_id=1155328332]
+position = Vector2(772, 785)
+texture = ExtResource("7_x4jp1")
+
+[node name="RepetirBoton" type="Button" parent="RectangleRepetir" unique_id=1804531721]
+offset_left = -113.0
+offset_top = -57.0
+offset_right = 112.0
+offset_bottom = 52.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_bieaf")
+theme_override_font_sizes/font_size = 45
+text = "Repetir"
+flat = true
+
+[connection signal="mouse_entered" from="RectangleSalir/SalirBoton" to="." method="_on_salir_boton_mouse_entered"]
+[connection signal="mouse_exited" from="RectangleSalir/SalirBoton" to="." method="_on_salir_boton_mouse_exited"]
+[connection signal="pressed" from="RectangleSalir/SalirBoton" to="." method="_on_salir_boton_pressed"]
+[connection signal="mouse_entered" from="RectangleRepetir/RepetirBoton" to="." method="_on_repetir_boton_mouse_entered"]
+[connection signal="mouse_exited" from="RectangleRepetir/RepetirBoton" to="." method="_on_repetir_boton_mouse_exited"]
+[connection signal="pressed" from="RectangleRepetir/RepetirBoton" to="." method="_on_repetir_boton_pressed"]

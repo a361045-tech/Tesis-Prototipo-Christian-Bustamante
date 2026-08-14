@@ -48,34 +48,43 @@ func _process(delta: float) -> void:
 			gestionBarrasNodo.cambiarBarra(valorEnergiaVientoDebil, delta, true, barraEnergia)
 			
 		if DatosGlobales.nivelViento == 2:
-			gestionBarrasNodo.cambiarBarra(valorEnergiaVientoFuerte, delta, true, barraEnergia) 
+			gestionBarrasNodo.cambiarBarra(valorEnergiaVientoFuerte, delta, true, barraEnergia)
+			
+	if (DatosGlobales.energiaActiva == true or gestionDineroNodo.dineroActual < dineroMolino) and DatosGlobales.molinoActivo == false:
+		gestionBarrasNodo.cambiarLabel(botonMolino, "Activar", Color(0.601, 0.601, 0.601, 1.0))
+	elif DatosGlobales.energiaActiva == false and DatosGlobales.molinoActivo == false:
+		gestionBarrasNodo.cambiarLabel(botonMolino, "Activar", Color(0.0, 0.871, 0.224, 1.0)) 
 
 
 func _on_button_molino_pressed() -> void:
+	if  gestionDineroNodo.dineroActual < dineroMolino:
+		animador.SinDinero()
 	
 	if (gestionDineroNodo.dineroActual >= dineroMolino or DatosGlobales.molinoActivo == true) and DatosGlobales.candadoMolino == false:
 		
 		match(DatosGlobales.molinoActivo):
 			true:
+				Sonidos.audioDesactivarTE.play()
 				DatosGlobales.molinoActivo = false
 				DatosGlobales.energiaActiva = false
-				gestionBarrasNodo.cambiarLabel(botonMolino, "Activar", Color(0.0, 0.871, 0.224, 1.0))
 				energiaPrimaria.texture = rectanguloDesactivado
 				energiaSecundaria.texture = rectanguloDesactivado
 				electricidadM.visible = false
 				gestionBarrasNodo.cambiarLabel(labelEPM, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
 				gestionBarrasNodo.cambiarLabel(labelESM, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
 				
-				if activoFuerte == 1:
+				if DatosGlobales.nivelViento == 1:
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoDebil, false, labelPositivo)
-					activoFuerte = 0
-				if activoFuerte == 2:
+					#activoFuerte = 0
+				if DatosGlobales.nivelViento == 2:
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoFuerte, false, labelPositivo)
-					activoFuerte = 0
+					#activoFuerte = 0
 				
 			false:
-				
-				if DatosGlobales.energiaActiva == false:
+				if DatosGlobales.energiaActiva == true:
+					animador.SoloUna()
+				elif DatosGlobales.energiaActiva == false:
+					Sonidos.audioActivarTE.play()
 					labelValor = gestionDineroNodo.cambiar_dinero(dineroMolino)
 					animador.dineroParpadeo()
 					
@@ -90,7 +99,7 @@ func _on_button_molino_pressed() -> void:
 					
 					if DatosGlobales.nivelViento == 1:
 						gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoDebil, true, labelPositivo)
-						activoFuerte = 1
+						#activoFuerte = 1
 					if DatosGlobales.nivelViento == 2:
 						gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoFuerte, true, labelPositivo)
-						activoFuerte = 2
+						#activoFuerte = 2

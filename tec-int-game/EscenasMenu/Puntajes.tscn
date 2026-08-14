@@ -1,32 +1,259 @@
 [gd_scene format=3 uid="uid://ddchjfco3xdv8"]
 
 [ext_resource type="Script" uid="uid://v1eq3v7wqagl" path="res://ScriptsMenus/puntajesBotones.gd" id="1_337vp"]
+[ext_resource type="Texture2D" uid="uid://dg8ek6bvbbs8d" path="res://UI_Menus/FondoMenus.png" id="2_3qyrf"]
+[ext_resource type="Texture2D" uid="uid://isyeinwcljm5" path="res://UI_Menus/RectangleBaseP.png" id="3_gi1hf"]
+[ext_resource type="Texture2D" uid="uid://dddmho3g1yjuw" path="res://UI_Menus/CirculoSalir.png" id="4_wi8o1"]
+[ext_resource type="Texture2D" uid="uid://vqy3a58j5dct" path="res://UI_Menus/FlechaRegresar.png" id="5_m3140"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="6_cjcy8"]
+[ext_resource type="Texture2D" uid="uid://kw25f1tfq61c" path="res://UI_Menus/BarraBuscar.png" id="7_2rjcb"]
+[ext_resource type="Texture2D" uid="uid://di3egl0l0owg5" path="res://UI_Menus/BuscarIcono.png" id="8_bd2gi"]
+[ext_resource type="Texture2D" uid="uid://ejdjmj4kbmx2" path="res://UI_Menus/BaseFiltro.png" id="9_v60yv"]
+[ext_resource type="Texture2D" uid="uid://bmsgm25v8ptul" path="res://UI_Menus/FiltroIcono.png" id="10_mlnf4"]
+[ext_resource type="Texture2D" uid="uid://dnpr33oq3fgu2" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleNombreUser.png" id="11_cjcy8"]
+[ext_resource type="Texture2D" uid="uid://e67vrew7cpjp" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleTiempo.png" id="12_2rjcb"]
+[ext_resource type="Texture2D" uid="uid://c5jk1wdmlsb6c" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleFecha.png" id="13_bd2gi"]
+[ext_resource type="Texture2D" uid="uid://blxk3440ky4t3" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleCalif.png" id="14_v60yv"]
+[ext_resource type="Texture2D" uid="uid://b3l2nl2g3isfk" path="res://UI_Menus/FiltroBaseRectangulo.png" id="15_v60yv"]
+[ext_resource type="Texture2D" uid="uid://bj8mqkgnsrply" path="res://UI_Menus/FechasFiltroRectangulo.png" id="16_mlnf4"]
+[ext_resource type="Texture2D" uid="uid://bqfxyaug432sn" path="res://UI_Menus/CalificacionFiltroRectangulo.png" id="17_phnep"]
 
-[node name="PuntajesMenu" type="Node2D" unique_id=505917152]
+[node name="PuntajesMenu" type="Node2D" unique_id=505917152 node_paths=PackedStringArray("contenedor", "botonSalir", "iconoFiltro", "panelFiltro", "buscador")]
 script = ExtResource("1_337vp")
+contenedor = NodePath("ScrollContainer/VBoxContainer")
+botonSalir = NodePath("CirculoSalir")
+iconoFiltro = NodePath("BaseFiltro")
+panelFiltro = NodePath("PanelFiltro")
+buscador = NodePath("BarraBuscar/LineEditBuscador")
 
-[node name="PuntajesLabel" type="Label" parent="." unique_id=390756855]
-offset_left = 436.0
-offset_top = 23.0
-offset_right = 604.0
-offset_bottom = 136.0
-theme_override_font_sizes/font_size = 40
-text = "Puntajes
-"
+[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1345483463]
+position = Vector2(961, 545.5)
+scale = Vector2(1.337, 1.064)
+texture = ExtResource("2_3qyrf")
 
-[node name="Regresar" type="Button" parent="." unique_id=2027901034]
-offset_left = 21.0
-offset_top = 17.0
-offset_right = 161.0
-offset_bottom = 93.0
+[node name="RectangleBaseP" type="Sprite2D" parent="." unique_id=2097266664]
+position = Vector2(982.25006, 590)
+scale = Vector2(1.1975874, 1)
+texture = ExtResource("3_gi1hf")
+
+[node name="CirculoSalir" type="Sprite2D" parent="." unique_id=202941925]
+position = Vector2(122, 113)
+texture = ExtResource("4_wi8o1")
+
+[node name="FlechaRegresar" type="Sprite2D" parent="CirculoSalir" unique_id=1140272019]
+position = Vector2(-9.75, -2.25)
+scale = Vector2(1.2696971, 1.4629631)
+texture = ExtResource("5_m3140")
+
+[node name="Regresar" type="Button" parent="CirculoSalir" unique_id=2027901034]
+offset_left = -101.0
+offset_top = -96.0
+offset_right = 99.0
+offset_bottom = 103.0
 theme_override_font_sizes/font_size = 25
-text = "Regresar"
+flat = true
 
 [node name="Usuarios guardados" type="Label" parent="." unique_id=1629557978]
-offset_left = 243.0
-offset_top = 156.0
-offset_right = 861.0
-offset_bottom = 425.0
+visible = false
+offset_left = 314.0
+offset_top = 38.0
+offset_right = 674.0
+offset_bottom = 106.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 30
 text = "Usuarios Guardados:"
 
-[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]
+[node name="PuntajeLabel" type="Label" parent="." unique_id=1517631855]
+offset_left = 790.0
+offset_top = 13.0
+offset_right = 1162.0
+offset_bottom = 118.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 85
+text = "Puntajes"
+
+[node name="BarraBuscar" type="Sprite2D" parent="." unique_id=2017852050]
+position = Vector2(891, 253)
+scale = Vector2(1.1683168, 1)
+texture = ExtResource("7_2rjcb")
+
+[node name="BuscarIcono" type="Sprite2D" parent="BarraBuscar" unique_id=1767346125]
+position = Vector2(-451.9322, -2)
+scale = Vector2(0.8559322, 1)
+texture = ExtResource("8_bd2gi")
+
+[node name="LineEditBuscador" type="LineEdit" parent="BarraBuscar" unique_id=543338819]
+offset_left = -412.55933
+offset_top = -40.0
+offset_right = 491.30505
+offset_bottom = 34.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Buscar"
+flat = true
+
+[node name="BaseFiltro" type="Sprite2D" parent="." unique_id=1630670928]
+position = Vector2(1574, 249)
+texture = ExtResource("9_v60yv")
+
+[node name="FiltroIcono" type="Sprite2D" parent="BaseFiltro" unique_id=1496854364]
+position = Vector2(0, 4)
+texture = ExtResource("10_mlnf4")
+
+[node name="ButtonFiltro" type="Button" parent="BaseFiltro" unique_id=1768576305]
+offset_left = -41.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 47.0
+flat = true
+
+[node name="RectangleNombreUser" type="Sprite2D" parent="." unique_id=832760303]
+visible = false
+position = Vector2(956, 411.99994)
+texture = ExtResource("11_cjcy8")
+
+[node name="RectangleTiempo" type="Sprite2D" parent="RectangleNombreUser" unique_id=1706089563]
+position = Vector2(-406, 103)
+texture = ExtResource("12_2rjcb")
+
+[node name="RectangleFecha" type="Sprite2D" parent="RectangleNombreUser" unique_id=1324077784]
+position = Vector2(335, 102)
+scale = Vector2(1.1975874, 1)
+texture = ExtResource("13_bd2gi")
+
+[node name="RectangleCalif" type="Sprite2D" parent="RectangleNombreUser" unique_id=1778556073]
+position = Vector2(-26.000061, 103)
+scale = Vector2(1.1975874, 1)
+texture = ExtResource("14_v60yv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1943741803]
+offset_left = 312.0
+offset_top = 316.0
+offset_right = 1654.0
+offset_bottom = 941.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=819811633]
+layout_mode = 2
+
+[node name="FlechaBajar" type="Sprite2D" parent="." unique_id=1292289865]
+visible = false
+position = Vector2(967.15607, 905.1094)
+rotation = -1.5707964
+scale = Vector2(1.0471594, 1.4482989)
+texture = ExtResource("5_m3140")
+
+[node name="Button" type="Button" parent="FlechaBajar" unique_id=1153983308]
+offset_left = -54.49243
+offset_top = -35.81775
+offset_right = 62.49243
+offset_bottom = 36.654297
+flat = true
+
+[node name="PanelFiltro" type="Sprite2D" parent="." unique_id=983220865]
+position = Vector2(1432, 629)
+texture = ExtResource("15_v60yv")
+
+[node name="FechasFiltroRectangulo" type="Sprite2D" parent="PanelFiltro" unique_id=267635886]
+position = Vector2(3, -182)
+texture = ExtResource("16_mlnf4")
+
+[node name="ButtonAntiguos" type="Button" parent="PanelFiltro/FechasFiltroRectangulo" unique_id=1367708144]
+offset_left = -115.0
+offset_top = -67.0
+offset_right = 120.0
+offset_bottom = -22.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 30
+text = "Mas antiguos"
+flat = true
+
+[node name="ButtonRecientes" type="Button" parent="PanelFiltro/FechasFiltroRectangulo" unique_id=276672859]
+offset_left = -117.0
+offset_top = -10.0
+offset_right = 118.0
+offset_bottom = 35.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 30
+text = "Mas recientes"
+flat = true
+
+[node name="CalificacionFiltroRectangulo" type="Sprite2D" parent="PanelFiltro" unique_id=378524942]
+position = Vector2(2, 85)
+scale = Vector2(1, 1.2043796)
+texture = ExtResource("17_phnep")
+
+[node name="ButtonMejorable" type="Button" parent="PanelFiltro/CalificacionFiltroRectangulo" unique_id=1507534466]
+offset_left = -129.0
+offset_top = -127.86667
+offset_right = 132.0
+offset_bottom = -82.86667
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 25
+text = "Califciacion Mejorable"
+flat = true
+
+[node name="ButtonBien" type="Button" parent="PanelFiltro/CalificacionFiltroRectangulo" unique_id=386761562]
+offset_left = -99.0
+offset_top = -77.2182
+offset_right = 102.0
+offset_bottom = -32.2182
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 25
+text = "Califciacion Bien"
+flat = true
+
+[node name="ButtonGenial" type="Button" parent="PanelFiltro/CalificacionFiltroRectangulo" unique_id=2020292356]
+offset_left = -107.0
+offset_top = -26.569702
+offset_right = 114.0
+offset_bottom = 18.430298
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 25
+text = "Califciacion Genial"
+flat = true
+
+[node name="ButtonExcelente" type="Button" parent="PanelFiltro/CalificacionFiltroRectangulo" unique_id=439605187]
+offset_left = -125.0
+offset_top = 26.569702
+offset_right = 129.0
+offset_bottom = 71.5697
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 25
+text = "Califciacion Exelente"
+flat = true
+
+[node name="ButtonTodos" type="Button" parent="PanelFiltro/CalificacionFiltroRectangulo" unique_id=1119844285]
+offset_left = -129.0
+offset_top = 78.04849
+offset_right = 125.0
+offset_bottom = 123.04849
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_cjcy8")
+theme_override_font_sizes/font_size = 25
+text = "Mostrar todos
+"
+flat = true
+
+[connection signal="mouse_entered" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_entered"]
+[connection signal="mouse_exited" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_exited"]
+[connection signal="pressed" from="CirculoSalir/Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="text_changed" from="BarraBuscar/LineEditBuscador" to="." method="_on_line_edit_buscador_text_changed"]
+[connection signal="mouse_entered" from="BaseFiltro/ButtonFiltro" to="." method="_on_button_filtro_mouse_entered"]
+[connection signal="mouse_exited" from="BaseFiltro/ButtonFiltro" to="." method="_on_button_filtro_mouse_exited"]
+[connection signal="pressed" from="BaseFiltro/ButtonFiltro" to="." method="_on_button_filtro_pressed"]
+[connection signal="pressed" from="PanelFiltro/FechasFiltroRectangulo/ButtonAntiguos" to="." method="_on_button_antiguos_pressed"]
+[connection signal="pressed" from="PanelFiltro/FechasFiltroRectangulo/ButtonRecientes" to="." method="_on_button_recientes_pressed"]
+[connection signal="pressed" from="PanelFiltro/CalificacionFiltroRectangulo/ButtonMejorable" to="." method="_on_button_mejorable_pressed"]
+[connection signal="pressed" from="PanelFiltro/CalificacionFiltroRectangulo/ButtonBien" to="." method="_on_button_bien_pressed"]
+[connection signal="pressed" from="PanelFiltro/CalificacionFiltroRectangulo/ButtonGenial" to="." method="_on_button_genial_pressed"]
+[connection signal="pressed" from="PanelFiltro/CalificacionFiltroRectangulo/ButtonExcelente" to="." method="_on_button_excelente_pressed"]
+[connection signal="pressed" from="PanelFiltro/CalificacionFiltroRectangulo/ButtonTodos" to="." method="_on_button_todos_pressed"]
