@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="5_degrv"]
 [ext_resource type="Texture2D" uid="uid://c5thu3mlxaah5" path="res://UI_Menus/TiposDeEnergia_Icono.png" id="6_t6402"]
 [ext_resource type="Texture2D" uid="uid://vqy3a58j5dct" path="res://UI_Menus/FlechaRegresar.png" id="7_uoqfm"]
+[ext_resource type="Texture2D" uid="uid://cfqhya7qbr07n" path="res://UI_Menus/RectanguloProximamente.png" id="8_mcura"]
 
 [node name="ElegirMinijuegoMenu" type="Node2D" unique_id=59473627 node_paths=PackedStringArray("botonRegresar", "botonTE")]
 script = ExtResource("1_usjtf")
@@ -76,6 +77,81 @@ theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 90
 text = "ElegirMinijuego
 "
+
+[node name="RectanguloProximamente" type="Sprite2D" parent="." unique_id=882529169]
+position = Vector2(1501, 384)
+texture = ExtResource("8_mcura")
+
+[node name="TE_Label" type="Label" parent="RectanguloProximamente" unique_id=877414023]
+offset_left = -153.99998
+offset_top = -39.0
+offset_right = 157.00002
+offset_bottom = 11.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Proximamente"
+horizontal_alignment = 1
+
+[node name="RectanguloProximamente2" type="Sprite2D" parent="." unique_id=732471850]
+position = Vector2(471, 820)
+texture = ExtResource("8_mcura")
+
+[node name="TE_Label" type="Label" parent="RectanguloProximamente2" unique_id=1109719496]
+offset_left = -153.99998
+offset_top = -39.0
+offset_right = 157.00002
+offset_bottom = 11.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Proximamente"
+horizontal_alignment = 1
+
+[node name="RectanguloProximamente3" type="Sprite2D" parent="." unique_id=1404629528]
+position = Vector2(1503, 822)
+texture = ExtResource("8_mcura")
+
+[node name="TE_Label" type="Label" parent="RectanguloProximamente3" unique_id=1037585143]
+offset_left = -153.99998
+offset_top = -39.0
+offset_right = 157.00002
+offset_bottom = 11.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Proximamente"
+horizontal_alignment = 1
+
+[node name="RectanguloProximamente4" type="Sprite2D" parent="." unique_id=1797933554]
+position = Vector2(985, 389)
+texture = ExtResource("8_mcura")
+
+[node name="TE_Label" type="Label" parent="RectanguloProximamente4" unique_id=1799022079]
+offset_left = -153.99998
+offset_top = -39.0
+offset_right = 157.00002
+offset_bottom = 11.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Proximamente"
+horizontal_alignment = 1
+
+[node name="RectanguloProximamente5" type="Sprite2D" parent="." unique_id=88698889]
+position = Vector2(996, 818)
+texture = ExtResource("8_mcura")
+
+[node name="TE_Label" type="Label" parent="RectanguloProximamente5" unique_id=1128373680]
+offset_left = -153.99998
+offset_top = -39.0
+offset_right = 157.00002
+offset_bottom = 11.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_degrv")
+theme_override_font_sizes/font_size = 40
+text = "Proximamente"
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_entered"]
 [connection signal="mouse_exited" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_exited"]
