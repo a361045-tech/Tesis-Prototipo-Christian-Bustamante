@@ -14,9 +14,9 @@ script = ExtResource("1_usjtf")
 botonRegresar = NodePath("CirculoSalir")
 botonTE = NodePath("RectanguloTE")
 
-[node name="FondoMenus" type="Sprite2D" parent="." unique_id=46580745]
-position = Vector2(961, 545.5)
-scale = Vector2(1.337, 1.064)
+[node name="FondoMenus" type="TextureRect" parent="." unique_id=776872647]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_lrrfv")
 
 [node name="CirculoSalir" type="Sprite2D" parent="." unique_id=1040999683]
@@ -64,7 +64,7 @@ offset_bottom = -95.13924
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Tipos de energia"
+text = "Tipos de energía"
 horizontal_alignment = 1
 
 [node name="ElegirMinijuegoLabel" type="Label" parent="." unique_id=301626074]
@@ -75,11 +75,11 @@ offset_bottom = 239.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 90
-text = "ElegirMinijuego
+text = "Elegir minijuego
 "
 
 [node name="RectanguloProximamente" type="Sprite2D" parent="." unique_id=882529169]
-position = Vector2(1501, 384)
+position = Vector2(1501, 399)
 texture = ExtResource("8_mcura")
 
 [node name="TE_Label" type="Label" parent="RectanguloProximamente" unique_id=877414023]
@@ -90,11 +90,11 @@ offset_bottom = 11.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Proximamente"
+text = "Próximamente"
 horizontal_alignment = 1
 
 [node name="RectanguloProximamente2" type="Sprite2D" parent="." unique_id=732471850]
-position = Vector2(471, 820)
+position = Vector2(486, 829)
 texture = ExtResource("8_mcura")
 
 [node name="TE_Label" type="Label" parent="RectanguloProximamente2" unique_id=1109719496]
@@ -105,7 +105,7 @@ offset_bottom = 11.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Proximamente"
+text = "Próximamente"
 horizontal_alignment = 1
 
 [node name="RectanguloProximamente3" type="Sprite2D" parent="." unique_id=1404629528]
@@ -120,11 +120,11 @@ offset_bottom = 11.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Proximamente"
+text = "Próximamente"
 horizontal_alignment = 1
 
 [node name="RectanguloProximamente4" type="Sprite2D" parent="." unique_id=1797933554]
-position = Vector2(985, 389)
+position = Vector2(985, 398)
 texture = ExtResource("8_mcura")
 
 [node name="TE_Label" type="Label" parent="RectanguloProximamente4" unique_id=1799022079]
@@ -135,11 +135,11 @@ offset_bottom = 11.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Proximamente"
+text = "Próximamente"
 horizontal_alignment = 1
 
 [node name="RectanguloProximamente5" type="Sprite2D" parent="." unique_id=88698889]
-position = Vector2(996, 818)
+position = Vector2(989, 827)
 texture = ExtResource("8_mcura")
 
 [node name="TE_Label" type="Label" parent="RectanguloProximamente5" unique_id=1128373680]
@@ -150,7 +150,7 @@ offset_bottom = 11.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_degrv")
 theme_override_font_sizes/font_size = 40
-text = "Proximamente"
+text = "Próximamente"
 horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="CirculoSalir/Regresar" to="." method="_on_regresar_mouse_entered"]

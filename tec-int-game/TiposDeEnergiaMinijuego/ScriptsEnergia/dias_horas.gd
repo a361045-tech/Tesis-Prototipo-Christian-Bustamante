@@ -27,9 +27,6 @@ var dias = 1
 @export var botonNuclear: Button
 @export var botonTermo: Button
 
-var bgDia = preload("res://TiposDeEnergiaMinijuego/SpritesEnergia/image 34.png")
-var bgNoche = preload("res://TiposDeEnergiaMinijuego/SpritesEnergia/image 35.png")
-
 func _ready() -> void:
 	pass 
 
@@ -40,18 +37,22 @@ func _process(delta: float) -> void:
 		DatosGlobales.horasFinal = horas
 		DatosGlobales.diasFinal = dias
 		DatosGlobales.contaminacionFinal = barraContaminacion.value
-		get_tree().change_scene_to_file("res://TiposDeEnergiaMinijuego/EscenasEnergia/Resultados.tscn")
-
+		#Transiciones.cambiarEscena("res://TiposDeEnergiaMinijuego/EscenasEnergia/Resultados.tscn")
+		get_tree().change_scene_to_file("res://TiposDeEnergiaMinijuego/EscenasEnergia/PerdisteMenu.tscn")
+		
+		if barraContaminacion.value >= 100:
+			DatosGlobales.perderContaminacion = true
+		else:
+			DatosGlobales.perderEnergia = true
 
 func _on_timeout() -> void:
 	horas += 1
 	horasPuntaje += 0.01
-	horasLabel.text = str(horas,":00")
+	horasLabel.text = str(horas,":00 hr")
 	
 	match(horas):
 		6:
 			animador.cambiarDia(3)
-			background.texture = bgDia
 			DatosGlobales.deDia = true
 			
 		10:
@@ -83,7 +84,6 @@ func _on_timeout() -> void:
 			
 		19:
 			animador.cambiarDia(2)
-			background.texture = bgNoche
 			DatosGlobales.deDia = false
 			
 			if DatosGlobales.panelSolarActivo == true:

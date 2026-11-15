@@ -11,6 +11,8 @@ extends Sprite2D
 
 @export var energiaPrimaria: Sprite2D
 @export var energiaSecundaria: Sprite2D
+@export var linea1T: Sprite2D
+@export var linea2T: Sprite2D
 
 @export var labelEPT: Label
 @export var labelEST: Label
@@ -44,7 +46,9 @@ func _process(delta: float) -> void:
 			energiaPrimaria.texture = rectanguloDesactivado
 			energiaSecundaria.texture = rectanguloDesactivado
 			gestionBarrasNodo.cambiarLabel(labelEPT, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
-			gestionBarrasNodo.cambiarLabel(labelEST, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+			gestionBarrasNodo.cambiarLabel(labelEST, "Sin producción", Color(0.0, 0.0, 0.0, 1.0))
+			linea1T.modulate = Color(0.0, 0.0, 0.0, 1.0)
+			linea2T.modulate = Color(0.0, 0.0, 0.0, 1.0)
 			gestionBarrasNodo.cambiarFlechas(valorEnergiaTermo, false, labelPositivo)	
 		
 		gestionBarrasNodo.cambiarLabel(botonTermo, "Invalido", Color(0.601, 0.601, 0.601, 1.0))
@@ -70,7 +74,9 @@ func _on_button_termo_pressed() -> void:
 					energiaSecundaria.texture = rectanguloDesactivado
 					electricidadT.visible = false
 					gestionBarrasNodo.cambiarLabel(labelEPT, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
-					gestionBarrasNodo.cambiarLabel(labelEST, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEST, "Sin producción", Color(0.0, 0.0, 0.0, 1.0))
+					linea1T.modulate = Color(0.0, 0.0, 0.0, 1.0)
+					linea2T.modulate = Color(0.0, 0.0, 0.0, 1.0)
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaTermo, false, labelPositivo)
 				
 			false:
@@ -80,12 +86,15 @@ func _on_button_termo_pressed() -> void:
 					Sonidos.audioActivarTE.play()
 					labelValor = gestionDineroNodo.cambiar_dinero(dineroTermo)
 					animador.dineroParpadeo()
+					animador.GastarTermo()
 					
 					DatosGlobales.termoelectricaActivo = true
 					gestionBarrasNodo.cambiarLabel(botonTermo, "Desactivar", Color(1, 0, 0, 1))
 					energiaPrimaria.texture = rectanguloTermo
 					energiaSecundaria.texture = rectanguloElectrico
 					electricidadT.visible = true
-					gestionBarrasNodo.cambiarLabel(labelEPT, "Energia solar", Color(0.0, 0.0, 0.0, 1.0))
-					gestionBarrasNodo.cambiarLabel(labelEST, "Energia electrica", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEPT, "Energía Termica", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEST, "Energía eléctrica", Color(0.0, 0.0, 0.0, 1.0))
+					linea1T.modulate = Color(1, 0, 0, 1)
+					linea2T.modulate = Color(1, 0, 0, 1)
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaTermo, true, labelPositivo)

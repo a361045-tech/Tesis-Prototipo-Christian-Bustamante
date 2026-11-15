@@ -16,59 +16,56 @@ tiempoLabel = NodePath("TiempoLabel/TiempoResultadoLabel")
 contaminacionLabel = NodePath("ContaminacionLabel/ContaminacionResultadoLabel")
 calificacionLabel = NodePath("CalificacionLabel/CalificacionResultadosLabel")
 guardadoNodo = NodePath("Guardado")
-contenedorCalificacion = NodePath("ContenedorCalificacion")
+contenedorCalificacion = NodePath("CalificacionLabel/ContenedorCalificacion")
 botonSalir = NodePath("RectangleSalir")
 botonRepetir = NodePath("RectangleRepetir")
+
+[node name="FondoMenus" type="TextureRect" parent="." unique_id=753706833]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_yxt6v")
 
 [node name="Guardado" type="Node2D" parent="." unique_id=1246074250]
 script = ExtResource("2_jp17o")
 
-[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1072206334]
-position = Vector2(961, 545.5)
-scale = Vector2(1.337, 1.064)
-texture = ExtResource("3_yxt6v")
-
 [node name="BaseRegistrarte" type="Sprite2D" parent="." unique_id=566154100]
 position = Vector2(943, 522)
 texture = ExtResource("4_tvlev")
-
-[node name="ContenedorCalificacion" type="Sprite2D" parent="." unique_id=190775030]
-position = Vector2(1162, 580)
-texture = ExtResource("8_hm51r")
 
 [node name="ResultadosLabel" type="Label" parent="." unique_id=1716552918]
 offset_left = 701.0
 offset_top = 130.0
 offset_right = 1198.0
 offset_bottom = 235.0
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_bieaf")
 theme_override_font_sizes/font_size = 85
 text = "¡Resultados!"
 
 [node name="TiempoLabel" type="Label" parent="." unique_id=1525116615]
-offset_left = 558.0
-offset_top = 267.0
-offset_right = 755.0
-offset_bottom = 329.0
+offset_left = 567.0
+offset_top = 316.0
+offset_right = 843.0
+offset_bottom = 403.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_bieaf")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
 text = "Tiempo: "
 
 [node name="TiempoResultadoLabel" type="Label" parent="TiempoLabel" unique_id=1547099100]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 3.0
-offset_right = 846.0
-offset_bottom = 120.0
+offset_left = 334.0
+offset_top = 15.0
+offset_right = 711.0
+offset_bottom = 132.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_bieaf")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="ContaminacionLabel" type="Label" parent="." unique_id=2137381515]
+visible = false
 offset_left = 565.0
 offset_top = 391.0
 offset_right = 941.0
@@ -91,15 +88,19 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 
 [node name="CalificacionLabel" type="Label" parent="." unique_id=1245135773]
-offset_left = 569.0
-offset_top = 539.0
-offset_right = 945.0
-offset_bottom = 601.0
+offset_left = 561.0
+offset_top = 523.0
+offset_right = 976.0
+offset_bottom = 610.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("5_bieaf")
-theme_override_font_sizes/font_size = 50
-text = "Calificacion: "
+theme_override_font_sizes/font_size = 70
+text = "Calificación: "
+
+[node name="ContenedorCalificacion" type="Sprite2D" parent="CalificacionLabel" unique_id=190775030]
+position = Vector2(591, 43)
+texture = ExtResource("8_hm51r")
 
 [node name="CalificacionResultadosLabel" type="Label" parent="CalificacionLabel" unique_id=790770459]
 layout_mode = 0
@@ -112,6 +113,7 @@ theme_override_fonts/font = ExtResource("5_bieaf")
 theme_override_font_sizes/font_size = 45
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RectangleSalir" type="Sprite2D" parent="." unique_id=345875414]
 position = Vector2(1125, 786)

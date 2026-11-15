@@ -26,9 +26,9 @@ script = ExtResource("2_0ftpc")
 
 [node name="UI" type="Node2D" parent="." unique_id=1829577130]
 
-[node name="FondoMenus" type="Sprite2D" parent="UI" unique_id=1901501972]
-position = Vector2(961, 545.5)
-scale = Vector2(1.3375, 1.0644531)
+[node name="FondoMenus" type="TextureRect" parent="UI" unique_id=930677153]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_c0x80")
 
 [node name="RectanguloJugar" type="Sprite2D" parent="UI" unique_id=629617589]

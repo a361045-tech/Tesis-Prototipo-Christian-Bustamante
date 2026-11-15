@@ -5,20 +5,20 @@
 [ext_resource type="Script" uid="uid://du21sr1ce6dim" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/gestion_barras.gd" id="4_hjgfk"]
 [ext_resource type="Script" uid="uid://eau6v6n2fb17" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/animador.gd" id="4_j02wc"]
 [ext_resource type="Texture2D" uid="uid://cwbiq0t8ejcjg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2150264.png" id="4_mltig"]
-[ext_resource type="Texture2D" uid="uid://bywd18gr5l14h" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/image 34.png" id="4_wfbnm"]
 [ext_resource type="Texture2D" uid="uid://c2j16uvj7n7lv" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/FondoBlanco.png" id="5_pvkk5"]
 [ext_resource type="Texture2D" uid="uid://damgwyw7ensdl" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2550433.png" id="6_q8vth"]
 [ext_resource type="Texture2D" uid="uid://dqjiv5rkdwtta" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Corazon-removebg-preview.png" id="7_4o2i1"]
-[ext_resource type="Texture2D" uid="uid://buo26gqfelyhp" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgressBars/ProgressBarNew/MarcoBarra.png" id="7_egtqc"]
 [ext_resource type="Script" uid="uid://520qfhotfyg1" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/corazon_barra.gd" id="8_05p3a"]
 [ext_resource type="FontFile" uid="uid://d4cqwdauio4fv" path="res://UI_Menus/Baloo-Regular.ttf" id="8_7ay1y"]
 [ext_resource type="Texture2D" uid="uid://bj28xwr5ko43f" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/descarga (2).png" id="8_cah2i"]
-[ext_resource type="Texture2D" uid="uid://b3k74fwof3u6w" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgressBars/ProgressBarNew/BarraVacia.png" id="9_7ay1y"]
 [ext_resource type="Texture2D" uid="uid://ybj2yfsj28xl" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Corazon_borde.png" id="9_8ax6i"]
 [ext_resource type="Texture2D" uid="uid://d0x35jyko7v8k" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Panel solar.png" id="9_j02wc"]
+[ext_resource type="Texture2D" uid="uid://bxrkhwa538puf" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/BaseDinero.png" id="9_mc0pk"]
 [ext_resource type="Script" uid="uid://doc22p1m3ckrr" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/panel_solar.gd" id="10_8ax6i"]
 [ext_resource type="Texture2D" uid="uid://bl1bnywsnjeij" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Molinos de viento.png" id="11_b34cu"]
 [ext_resource type="Texture2D" uid="uid://chq3rgsxn47oh" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleDesactivado.png" id="11_jhm86"]
+[ext_resource type="PackedScene" uid="uid://c7pour70dfitg" path="res://TiposDeEnergiaMinijuego/EscenasEnergia/flecha_tutorial_p (1).tscn" id="12_fx2xe"]
+[ext_resource type="Texture2D" uid="uid://dec0ky86hh11t" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgressBars/BarraVacia.png" id="12_mc0pk"]
 [ext_resource type="Script" uid="uid://bnqfdyg7kvk8p" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/molino.gd" id="12_y0q1b"]
 [ext_resource type="Texture2D" uid="uid://c27lhupmatasg" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Planta nuclear.png" id="13_egtqc"]
 [ext_resource type="Script" uid="uid://bdr61bfuth75n" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/electricidad.gd" id="14_4o2i1"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://11pf1wwltguk" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleSolar.png" id="36_mc0pk"]
 [ext_resource type="Texture2D" uid="uid://iaf0c1ypr7oi" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/EfectoViento.png" id="37_cah2i"]
 [ext_resource type="Texture2D" uid="uid://dr0hudruohcoa" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleElectricidad.png" id="37_fx2xe"]
+[ext_resource type="Texture2D" uid="uid://3acphk1xf0nf" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/RectangleInvalido.png" id="39_fx2xe"]
 
 [sub_resource type="Animation" id="Animation_m18g4"]
 resource_name = "Dia a tarde"
@@ -192,6 +193,120 @@ _data = {
 &"Tarde a noche": SubResource("Animation_ovnic")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fx2xe"]
+load_path = "res://.godot/imported/MarcoBarra.png-8b8ada78f944c5752a72bb76d7a2ab8a.ctex"
+
+[sub_resource type="Animation" id="Animation_uf1k1"]
+resource_name = "Gastar Dinero Molino"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TiposDeEnergia/Molino/DineroGastoM:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../TiposDeEnergia/Molino/DineroGastoM:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333336, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-120.788025, -575.12823), Vector2(-120.788, -715)]
+}
+
+[sub_resource type="Animation" id="Animation_meu0i"]
+resource_name = "Gastar Dinero Nuclear"
+length = 1.1666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TiposDeEnergia/PlantaNuclear/DineroGastoN:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../TiposDeEnergia/PlantaNuclear/DineroGastoN:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-96, -346.00003), Vector2(-96, -420)]
+}
+
+[sub_resource type="Animation" id="Animation_aw8lc"]
+resource_name = "Gastar Dinero Panel"
+length = 1.3666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TiposDeEnergia/PanelSolar/DineroGastoP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-192.30774, -557.6924), Vector2(-192.308, -725)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../TiposDeEnergia/PanelSolar/DineroGastoP:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666672, 0.6333333, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_37hj2"]
+resource_name = "Gastar Dinero Termo"
+length = 1.2333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TiposDeEnergia/Termoelectrica/DineroGastoT:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../TiposDeEnergia/Termoelectrica/DineroGastoT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-174.23901, -630.54956), Vector2(-174.239, -725)]
+}
+
 [sub_resource type="Animation" id="Animation_05p3a"]
 length = 0.001
 tracks/0/type = "value"
@@ -241,6 +356,102 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../TiposDeEnergia/PanelSolar/DineroGastoP:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-192.30774, -557.6924)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../TiposDeEnergia/PanelSolar/DineroGastoP:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../TiposDeEnergia/Molino/DineroGastoM:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../TiposDeEnergia/Molino/DineroGastoM:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120.788025, -575.12823)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../TiposDeEnergia/PlantaNuclear/DineroGastoN:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../TiposDeEnergia/PlantaNuclear/DineroGastoN:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-96, -346.00003)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../TiposDeEnergia/Termoelectrica/DineroGastoT:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../TiposDeEnergia/Termoelectrica/DineroGastoT:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-174.23901, -630.54956)]
 }
 
 [sub_resource type="Animation" id="Animation_mc0pk"]
@@ -300,17 +511,21 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_05p3a"]
 _data = {
+&"Gastar Dinero Molino": SubResource("Animation_uf1k1"),
+&"Gastar Dinero Nuclear": SubResource("Animation_meu0i"),
+&"Gastar Dinero Panel": SubResource("Animation_aw8lc"),
+&"Gastar Dinero Termo": SubResource("Animation_37hj2"),
 &"RESET": SubResource("Animation_05p3a"),
 &"Sin dinero": SubResource("Animation_mc0pk"),
 &"parpadeo": SubResource("Animation_4o2i1")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6r6c"]
-texture = ExtResource("9_7ay1y")
+texture = ExtResource("12_mc0pk")
 modulate_color = Color(1, 0.9666667, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ciuob"]
-texture = ExtResource("9_7ay1y")
+texture = ExtResource("12_mc0pk")
 modulate_color = Color(0, 0.57, 0.066500075, 1)
 
 [sub_resource type="Animation" id="Animation_egtqc"]
@@ -359,7 +574,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pvkk5"]
-texture = ExtResource("9_7ay1y")
+texture = ExtResource("12_mc0pk")
 modulate_color = Color(0.31666672, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77lsr"]
@@ -369,7 +584,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cah2i"]
-texture = ExtResource("9_7ay1y")
+texture = ExtResource("12_mc0pk")
 modulate_color = Color(0.21186002, 0.1716, 0.44, 1)
 
 [sub_resource type="Animation" id="Animation_m3jg5"]
@@ -401,7 +616,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CandadoMolino:visible")
+tracks/2/path = NodePath("../UI/CandadoMolino:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -440,7 +655,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CandadoNuclear:visible")
+tracks/2/path = NodePath("../UI/CandadoNuclear:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -504,104 +719,36 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PanelSolar/EnergiaPrimariaP/PanelContainerEPP/LabelEPP:text")
+tracks/4/path = NodePath("PlantaNuclear/ElectricidadN:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["Desactivado", "Energia solar"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PanelSolar/EnergiaSecundariaP/PanelContainerESP/LabelESP:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.033333335, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["Sin produccion ", "Energia electrica"]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Molino/ButtonMolino:theme_override_colors/font_color")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.099999905),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.35906908, 0.35906908, 0.35906908, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PlantaNuclear/ButtonNuclear:theme_override_colors/font_color")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.36078432, 0.36078432, 0.36078432, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Termoelectrica/ButtonTermo:theme_override_colors/font_color")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.099999905),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.36078432, 0.36078432, 0.36078432, 1)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("PanelSolar/ButtonPanel:text")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Desactivar
-"]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("PanelSolar/ButtonPanel:theme_override_colors/font_color")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.099999905),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("PlantaNuclear/ElectricidadN:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelSolar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.0333333, 2.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [1],
+"method": &"cambiar_EPP"
+}, {
+"args": [1],
+"method": &"cambiar_ESP"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7qrjw"]
 resource_name = "Panel_Desactivar"
-length = 2.1666667
+length = 2.0666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -621,7 +768,7 @@ tracks/1/path = NodePath("PanelSolar/EnergiaPrimariaP:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("36_mc0pk"), ExtResource("11_jhm86")]
@@ -645,35 +792,96 @@ tracks/3/path = NodePath("PanelSolar/EnergiaSecundariaP:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0.033333335, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("37_fx2xe"), ExtResource("11_jhm86")]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelSolar")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"cambiar_EPP"
+}, {
+"args": [2],
+"method": &"cambiar_ESP"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ufeox"]
+resource_name = "Panel_Invalido_Desactivado"
+length = 2.1666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelSolar/EnergiaPrimariaP/Line1P:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelSolar/EnergiaPrimariaP:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_fx2xe")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelSolar/EnergiaPrimariaP/Line2P:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelSolar/EnergiaSecundariaP:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("37_fx2xe"), ExtResource("11_jhm86")]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PanelSolar/EnergiaPrimariaP/PanelContainerEPP/LabelEPP:text")
+tracks/4/path = NodePath("PanelSolar")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Desactivado"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PanelSolar/EnergiaSecundariaP/PanelContainerESP/LabelESP:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Sin produccion
-"]
+"times": PackedFloat32Array(1.1, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [3],
+"method": &"cambiar_EPP"
+}, {
+"args": [2],
+"method": &"cambiar_ESP"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_dhvs6"]
@@ -729,104 +937,104 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PanelSolar/EnergiaPrimariaP/PanelContainerEPP/LabelEPP:text")
+tracks/4/path = NodePath("../UI/Restricciones:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Desactivado"]
+"values": ["No suficiente dinero
+"]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PanelSolar/EnergiaSecundariaP/PanelContainerESP/LabelESP:text")
+tracks/5/path = NodePath("PlantaNuclear/ElectricidadN:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Sin produccion"]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../UI/Restricciones:text")
+tracks/6/path = NodePath("PlantaNuclear:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["No suficiente dinero
-"]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Molino/ButtonMolino:theme_override_colors/font_color")
+tracks/7/path = NodePath("PlantaNuclear:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0.87058824, 0.22352941, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("PlantaNuclear/ButtonNuclear:theme_override_colors/font_color")
+tracks/8/path = NodePath("../UI/CandadoNuclear:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.87058824, 0.22352941, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Termoelectrica/ButtonTermo:theme_override_colors/font_color")
+tracks/9/path = NodePath("Molino:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.87058824, 0.22352941, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("PanelSolar/ButtonPanel:text")
+tracks/10/path = NodePath("Molino:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Activar"]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("PanelSolar/ButtonPanel:theme_override_colors/font_color")
+tracks/11/path = NodePath("../UI/CandadoMolino:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.87058824, 0.22352941, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("PlantaNuclear/ElectricidadN:visible")
+tracks/12/path = NodePath("Termoelectrica:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -838,106 +1046,22 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("PlantaNuclear:visible")
+tracks/13/path = NodePath("Termoelectrica:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("PlantaNuclear:modulate")
+tracks/14/path = NodePath("../UI/CandadoTermo:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../CandadoNuclear:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Molino:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Molino:modulate")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("../CandadoMolino:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Termoelectrica:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Termoelectrica:modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("../CandadoTermo:visible")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1014,7 +1138,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CandadoTermo:visible")
+tracks/2/path = NodePath("../UI/CandadoTermo:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1024,15 +1148,34 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_8y075"]
+resource_name = "Tutorial flecha"
+length = 3.1666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../UI/FlechaTutorialP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(471.00003, 184.00002), Vector2(500, 170), Vector2(471.00003, 184.00002)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3jg5"]
 _data = {
 &"Molino_Desbloqueo": SubResource("Animation_m3jg5"),
 &"Nuclear_Desbloqueo": SubResource("Animation_opc36"),
 &"Panel_Activar": SubResource("Animation_53xxd"),
 &"Panel_Desactivar": SubResource("Animation_7qrjw"),
+&"Panel_Invalido_Desactivado": SubResource("Animation_ufeox"),
 &"RESET": SubResource("Animation_dhvs6"),
 &"SoloUna": SubResource("Animation_fx2xe"),
-&"Termo_Desbloqueo": SubResource("Animation_owe7f")
+&"Termo_Desbloqueo": SubResource("Animation_owe7f"),
+&"Tutorial flecha": SubResource("Animation_8y075")
 }
 
 [sub_resource type="Animation" id="Animation_j02wc"]
@@ -1206,38 +1349,41 @@ animacionEnergias = NodePath("../../TiposDeEnergia/AnimationEnergia")
 
 [node name="FondoBlanco" type="Sprite2D" parent="UI" unique_id=305946295]
 modulate = Color(0.78431374, 1, 1, 1)
-position = Vector2(956.75, 537.5)
-scale = Vector2(0.9976563, 0.98796296)
+position = Vector2(958.5, 537.5)
+scale = Vector2(0.9994791, 0.98796296)
 texture = ExtResource("5_pvkk5")
 
 [node name="CambiarDia" type="AnimationPlayer" parent="UI/FondoBlanco" unique_id=1402032827]
 libraries/ = SubResource("AnimationLibrary_mc0pk")
 
-[node name="PraderaBG" type="Sprite2D" parent="UI" unique_id=1103863253]
-position = Vector2(957.5, 589.5)
-scale = Vector2(2.3301086, 1.6693548)
+[node name="PraderaBG" type="TextureRect" parent="UI" unique_id=1639058834]
+texture_filter = 1
+offset_left = -1.0
+offset_top = 52.0
+offset_right = 830.3664
+offset_bottom = 672.0
+scale = Vector2(2.310654, 1.6693548)
 texture = ExtResource("8_cah2i")
 
 [node name="Background" type="Sprite2D" parent="UI" unique_id=1121763190]
 visible = false
 position = Vector2(963.5, 542.5)
 scale = Vector2(1.3395833, 1.0595702)
-texture = ExtResource("4_wfbnm")
+
+[node name="BaseDinero" type="Sprite2D" parent="UI" unique_id=1495621552]
+position = Vector2(1808, 64)
+scale = Vector2(1.2141926, 1.1573564)
+texture = ExtResource("9_mc0pk")
 
 [node name="DineroSprite" type="Sprite2D" parent="UI" unique_id=2111547558]
 position = Vector2(1751.0001, 59)
 scale = Vector2(0.20623177, 0.1514565)
 texture = ExtResource("4_mltig")
 
-[node name="MarcoEnergiaBarra" type="Sprite2D" parent="UI" unique_id=1297863312]
-position = Vector2(997.00006, 65.5)
-scale = Vector2(0.9849852, 1.3703704)
-texture = ExtResource("7_egtqc")
-
 [node name="MarcoEnergiaContaminacion" type="Sprite2D" parent="UI" unique_id=1334307775]
 position = Vector2(1001, 987)
 scale = Vector2(0.9849852, 1.3703704)
-texture = ExtResource("7_egtqc")
+texture = SubResource("CompressedTexture2D_fx2xe")
 
 [node name="Restricciones" type="Label" parent="UI" unique_id=774537698]
 offset_left = 705.0
@@ -1252,6 +1398,9 @@ theme_override_font_sizes/font_size = 40
 text = "No suficiente dinero
 "
 horizontal_alignment = 1
+
+[node name="FlechaTutorialP" parent="UI" unique_id=326756476 instance=ExtResource("12_fx2xe")]
+position = Vector2(471.00003, 184.00002)
 
 [node name="DineroTotal" type="Label" parent="UI" unique_id=2067568613]
 offset_left = 1786.0
@@ -1269,9 +1418,9 @@ libraries/ = SubResource("AnimationLibrary_05p3a")
 
 [node name="ProgressBarEnergia" type="ProgressBar" parent="UI" unique_id=678860406]
 offset_left = 838.0
-offset_top = 20.0
+offset_top = 35.0
 offset_right = 1056.0
-offset_bottom = 87.0
+offset_bottom = 102.0
 scale = Vector2(1.478464, 1.5326927)
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1380,7 +1529,7 @@ text = "0%"
 
 [node name="FlechaPositiva" type="Sprite2D" parent="UI/ProgressBarEnergia" unique_id=1388185050]
 modulate = Color(0.16666675, 1, 0, 1)
-position = Vector2(326.01404, 33.274773)
+position = Vector2(326.014, 32.622)
 rotation = -3.1415925
 scale = Vector2(0.69399995, 0.695)
 texture = ExtResource("15_cah2i")
@@ -1396,6 +1545,11 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 35
 text = "0%"
+
+[node name="MarcoEnergiaBarra" type="Sprite2D" parent="UI/ProgressBarEnergia" unique_id=1297863312]
+position = Vector2(107.54413, 29.686317)
+scale = Vector2(0.6662219, 0.8940934)
+texture = SubResource("CompressedTexture2D_fx2xe")
 
 [node name="ProgressBarContaminacion" type="ProgressBar" parent="UI" unique_id=245356626]
 offset_left = 842.0
@@ -1433,9 +1587,24 @@ texture = ExtResource("7_4o2i1")
 script = ExtResource("8_05p3a")
 animador = NodePath("../../../GameManager/Animador")
 
+[node name="CandadoTermo" type="Sprite2D" parent="UI" unique_id=1101932258]
+position = Vector2(1634.9999, 904.00006)
+scale = Vector2(0.3828125, 0.35937512)
+texture = ExtResource("20_y0q1b")
+
+[node name="CandadoNuclear" type="Sprite2D" parent="UI" unique_id=1495495934]
+position = Vector2(1631, 364.00006)
+scale = Vector2(0.36132804, 0.3427733)
+texture = ExtResource("20_y0q1b")
+
+[node name="CandadoMolino" type="Sprite2D" parent="UI" unique_id=325773198]
+position = Vector2(473, 882)
+scale = Vector2(0.40271348, 0.3503949)
+texture = ExtResource("20_y0q1b")
+
 [node name="TiposDeEnergia" type="Node2D" parent="." unique_id=988250731]
 
-[node name="PanelSolar" type="Sprite2D" parent="TiposDeEnergia" unique_id=1769076205 node_paths=PackedStringArray("botonPanel", "barraEnergia", "dia", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "labelPanel", "labelEPP", "labelESP", "labelPositivo", "electricidadP")]
+[node name="PanelSolar" type="Sprite2D" parent="TiposDeEnergia" unique_id=1769076205 node_paths=PackedStringArray("botonPanel", "barraEnergia", "dia", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "linea1P", "linea2P", "labelPanel", "labelEPP", "labelESP", "labelPositivo", "electricidadP", "flechaTutorial")]
 position = Vector2(287, 291)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("9_j02wc")
@@ -1448,11 +1617,14 @@ gestionBarrasNodo = NodePath("../../GameManager/GestionBarras")
 animador = NodePath("../../GameManager/Animador")
 energiaPrimaria = NodePath("EnergiaPrimariaP")
 energiaSecundaria = NodePath("EnergiaSecundariaP")
+linea1P = NodePath("EnergiaPrimariaP/Line1P")
+linea2P = NodePath("EnergiaPrimariaP/Line2P")
 labelPanel = NodePath("ActivarPanel")
 labelEPP = NodePath("EnergiaPrimariaP/PanelContainerEPP/LabelEPP")
 labelESP = NodePath("EnergiaSecundariaP/PanelContainerESP/LabelESP")
 labelPositivo = NodePath("../../UI/ProgressBarEnergia/PositivoLabel")
 electricidadP = NodePath("ElectricidadP")
+flechaTutorial = NodePath("../../UI/FlechaTutorialP")
 
 [node name="DineroSprite2" type="Sprite2D" parent="TiposDeEnergia/PanelSolar" unique_id=476350267]
 position = Vector2(-221.79153, -378.66656)
@@ -1464,10 +1636,11 @@ offset_left = -517.913
 offset_top = -215.60007
 offset_right = 519.1121
 offset_bottom = 195.06656
-theme_override_colors/font_color = Color(0, 0.87058824, 0.22352941, 1)
-theme_override_constants/outline_size = 30
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 60
 theme_override_font_sizes/font_size = 200
-text = "Activar"
+text = "Desactivar
+"
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -1482,6 +1655,20 @@ theme_override_constants/outline_size = 50
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 200
 text = "10"
+metadata/_edit_use_anchors_ = true
+
+[node name="DineroGastoP" type="Label" parent="TiposDeEnergia/PanelSolar" unique_id=1699958557]
+modulate = Color(1, 0, 0, 0)
+offset_left = -192.30774
+offset_top = -557.6924
+offset_right = 74.69226
+offset_bottom = -242.69238
+scale = Vector2(1.25, 1.25)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_7ay1y")
+theme_override_font_sizes/font_size = 200
+text = "-10"
 metadata/_edit_use_anchors_ = true
 
 [node name="ActivarPanel" type="Label" parent="TiposDeEnergia/PanelSolar" unique_id=227075748]
@@ -1543,13 +1730,15 @@ offset_bottom = 27.212767
 theme_override_styles/panel = SubResource("StyleBoxFlat_cah2i")
 
 [node name="LabelESP" type="Label" parent="TiposDeEnergia/PanelSolar/EnergiaSecundariaP/PanelContainerESP" unique_id=1508453455]
+custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 14
-text = "Sin produccion"
+text = "Sin producción "
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ElectricidadP" type="Line2D" parent="TiposDeEnergia/PanelSolar" unique_id=392407662]
@@ -1560,7 +1749,7 @@ scale = Vector2(2.9364772, 6.533334)
 default_color = Color(0.20392157, 1, 1, 1)
 script = ExtResource("14_4o2i1")
 
-[node name="Molino" type="Sprite2D" parent="TiposDeEnergia" unique_id=1151454841 node_paths=PackedStringArray("botonMolino", "barraEnergia", "viento", "labelVientoFuerte", "labelVientoActivo", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "labelEPM", "labelESM", "labelPositivo", "electricidadM")]
+[node name="Molino" type="Sprite2D" parent="TiposDeEnergia" unique_id=1151454841 node_paths=PackedStringArray("botonMolino", "barraEnergia", "viento", "labelVientoFuerte", "labelVientoActivo", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "linea1M", "linea2M", "labelEPM", "labelESM", "labelPositivo", "electricidadM")]
 visible = false
 position = Vector2(357, 914.00006)
 scale = Vector2(0.3725535, 0.35644233)
@@ -1576,6 +1765,8 @@ gestionBarrasNodo = NodePath("../../GameManager/GestionBarras")
 animador = NodePath("../../GameManager/Animador")
 energiaPrimaria = NodePath("EnergiaPrimariaM")
 energiaSecundaria = NodePath("EnergiaSecundariaM")
+linea1M = NodePath("EnergiaPrimariaM/Line1M")
+linea2M = NodePath("EnergiaPrimariaM/Line2M")
 labelEPM = NodePath("EnergiaPrimariaM/PanelContainerEPM/LabelEPM")
 labelESM = NodePath("EnergiaSecundariaM/PanelContainerESM/LabelESM")
 labelPositivo = NodePath("../../UI/ProgressBarEnergia/PositivoLabel")
@@ -1586,8 +1777,8 @@ offset_left = -328.57224
 offset_top = -319.973
 offset_right = 359.05814
 offset_bottom = 353.6542
-theme_override_colors/font_color = Color(0, 0.87058824, 0.22352941, 1)
-theme_override_constants/outline_size = 30
+theme_override_colors/font_color = Color(0.35906908, 0.35906905, 0.35906908, 1)
+theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 150
 text = "Activar"
 flat = true
@@ -1609,6 +1800,20 @@ theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 150
 text = "10"
+metadata/_edit_use_anchors_ = true
+
+[node name="DineroGastoM" type="Label" parent="TiposDeEnergia/Molino" unique_id=515873754]
+modulate = Color(1, 0, 0, 0)
+offset_left = -120.788025
+offset_top = -575.12823
+offset_right = 79.211975
+offset_bottom = -338.12823
+scale = Vector2(1.2, 1.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_7ay1y")
+theme_override_font_sizes/font_size = 150
+text = "-10"
 metadata/_edit_use_anchors_ = true
 
 [node name="ActivarMolino" type="Label" parent="TiposDeEnergia/Molino" unique_id=279587965]
@@ -1654,8 +1859,8 @@ texture = ExtResource("22_77lsr")
 
 [node name="Line2M" type="Sprite2D" parent="TiposDeEnergia/Molino/EnergiaPrimariaM" unique_id=1711744695]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-76.45447, 3.194809e-05)
-scale = Vector2(0.6316865, -0.8996113)
+position = Vector2(-89.16043, 3.194809e-05)
+scale = Vector2(0.994714, -0.8996113)
 texture = ExtResource("22_77lsr")
 
 [node name="EnergiaSecundariaM" type="Sprite2D" parent="TiposDeEnergia/Molino" unique_id=27613683]
@@ -1675,19 +1880,19 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("8_7ay1y")
-text = "Sin
-produccion"
+text = "Sin producción "
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="ElectricidadM" type="Line2D" parent="TiposDeEnergia/Molino" unique_id=862442952]
+visible = false
 position = Vector2(730.0964, -594.76685)
 rotation = -0.6981317
 scale = Vector2(2.3126535, 2.3434157)
 default_color = Color(0.20392157, 1, 1, 1)
 script = ExtResource("14_4o2i1")
 
-[node name="PlantaNuclear" type="Sprite2D" parent="TiposDeEnergia" unique_id=216973319 node_paths=PackedStringArray("botonNuclear", "barraEnergia", "barraContaminacion", "barraUranio", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "labelEPN", "labelESN", "labelNuclear", "labelPositivo", "electricidadN")]
+[node name="PlantaNuclear" type="Sprite2D" parent="TiposDeEnergia" unique_id=216973319 node_paths=PackedStringArray("botonNuclear", "barraEnergia", "barraContaminacion", "barraUranio", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "linea1N", "linea2N", "labelEPN", "labelESN", "labelNuclear", "labelPositivo", "electricidadN")]
 visible = false
 position = Vector2(1763, 286)
 scale = Vector2(0.5, 0.5)
@@ -1702,6 +1907,8 @@ gestionBarrasNodo = NodePath("../../GameManager/GestionBarras")
 animador = NodePath("../../GameManager/Animador")
 energiaPrimaria = NodePath("EnergiaPrimariaN")
 energiaSecundaria = NodePath("EnergiaSecundariaN")
+linea1N = NodePath("EnergiaPrimariaN/Line1N")
+linea2N = NodePath("EnergiaPrimariaN/Line2N")
 labelEPN = NodePath("EnergiaPrimariaN/PanelContainerEPN/LabelEPN")
 labelESN = NodePath("EnergiaSecundariaN/PanelContainerESN/LabelESN")
 labelNuclear = NodePath("ActivarNuclear")
@@ -1713,8 +1920,8 @@ offset_left = -169.64955
 offset_top = -179.46565
 offset_right = 181.31822
 offset_bottom = 191.0783
-theme_override_colors/font_color = Color(0, 0.87058824, 0.22352941, 1)
-theme_override_constants/outline_size = 30
+theme_override_colors/font_color = Color(0.36078432, 0.36078435, 0.36078432, 1)
+theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 90
 text = "Activar"
 flat = true
@@ -1735,6 +1942,19 @@ text = "5"
 position = Vector2(-120.000336, -242.00003)
 scale = Vector2(0.29704395, 0.26973602)
 texture = ExtResource("4_mltig")
+
+[node name="DineroGastoN" type="Label" parent="TiposDeEnergia/PlantaNuclear" unique_id=1470485120]
+modulate = Color(1, 0, 0, 0)
+offset_left = -96.0
+offset_top = -346.00003
+offset_right = 133.0
+offset_bottom = -31.00003
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_7ay1y")
+theme_override_font_sizes/font_size = 200
+text = "-5"
 
 [node name="ActivarNuclear" type="Label" parent="TiposDeEnergia/PlantaNuclear" unique_id=1628035597]
 visible = false
@@ -1760,15 +1980,16 @@ scale = Vector2(2.9320989, 2.6463866)
 texture = ExtResource("19_4o2i1")
 
 [node name="ProgressBarUranio" type="ProgressBar" parent="TiposDeEnergia/PlantaNuclear" unique_id=1657871328]
-offset_left = -426.0
-offset_top = -60.0
-offset_right = -208.00002
+offset_left = -418.0
+offset_top = -86.0
+offset_right = -186.86914
+offset_bottom = -14.700287
 scale = Vector2(1.0383724, 1.3464285)
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("8_7ay1y")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 40
 theme_override_styles/fill = SubResource("StyleBoxTexture_pvkk5")
 min_value = 1.0
 value = 100.0
@@ -1779,8 +2000,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Uranio" type="Sprite2D" parent="TiposDeEnergia/PlantaNuclear/ProgressBarUranio" unique_id=1559381286]
-position = Vector2(106.3762, 105.19702)
-scale = Vector2(0.17811182, 0.13406555)
+position = Vector2(109.78731, 136.65784)
+scale = Vector2(0.2325112, 0.19437751)
 texture = ExtResource("15_ciuob")
 
 [node name="EnergiaPrimariaN" type="Sprite2D" parent="TiposDeEnergia/PlantaNuclear" unique_id=194097722]
@@ -1790,9 +2011,9 @@ texture = ExtResource("11_jhm86")
 
 [node name="Line1N" type="Sprite2D" parent="TiposDeEnergia/PlantaNuclear/EnergiaPrimariaN" unique_id=668615147]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-3.000002, -52)
+position = Vector2(3.304613, -61.723392)
 rotation = 1.5707964
-scale = Vector2(0.6316865, -0.8996113)
+scale = Vector2(0.9323701, -0.8996113)
 texture = ExtResource("22_77lsr")
 
 [node name="Line2N" type="Sprite2D" parent="TiposDeEnergia/PlantaNuclear/EnergiaPrimariaN" unique_id=341251961]
@@ -1834,8 +2055,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("8_7ay1y")
-text = "Sin
-produccion"
+text = "Sin producción "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -1848,7 +2068,7 @@ width = 7.0
 default_color = Color(0.20392157, 1, 1, 1)
 script = ExtResource("14_4o2i1")
 
-[node name="Termoelectrica" type="Sprite2D" parent="TiposDeEnergia" unique_id=1177720374 node_paths=PackedStringArray("botonTermo", "barraEnergia", "barraContaminacion", "barraTermo", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "labelEPT", "labelEST", "labelTermo", "labelPositivo", "electricidadT")]
+[node name="Termoelectrica" type="Sprite2D" parent="TiposDeEnergia" unique_id=1177720374 node_paths=PackedStringArray("botonTermo", "barraEnergia", "barraContaminacion", "barraTermo", "gestionDineroNodo", "gestionBarrasNodo", "animador", "energiaPrimaria", "energiaSecundaria", "linea1T", "linea2T", "labelEPT", "labelEST", "labelTermo", "labelPositivo", "electricidadT")]
 visible = false
 position = Vector2(1660.0001, 904)
 scale = Vector2(0.26400566, 0.32828513)
@@ -1863,6 +2083,8 @@ gestionBarrasNodo = NodePath("../../GameManager/GestionBarras")
 animador = NodePath("../../GameManager/Animador")
 energiaPrimaria = NodePath("EnergiaPrimariaT")
 energiaSecundaria = NodePath("EnergiaSecundariaT")
+linea1T = NodePath("EnergiaPrimariaT/Line1T")
+linea2T = NodePath("EnergiaPrimariaT/Line2T")
 labelEPT = NodePath("EnergiaPrimariaT/PanelContainerEPT/LabelEPT")
 labelEST = NodePath("EnergiaSecundariaT/PanelContainerEST/LabelEST")
 labelTermo = NodePath("ActivarTermo")
@@ -1875,11 +2097,11 @@ offset_top = -194.95248
 offset_right = -31.600342
 offset_bottom = 175.59146
 scale = Vector2(2.2188797, 1.7202303)
-theme_override_colors/font_color = Color(0, 0.87058824, 0.22352941, 1)
+theme_override_colors/font_color = Color(0.36078432, 0.36078435, 0.36078432, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 30
+theme_override_constants/outline_size = 50
 theme_override_font_sizes/font_size = 90
-text = "Activar"
+text = "Desactivar"
 flat = true
 
 [node name="DineroTermo" type="Label" parent="TiposDeEnergia/Termoelectrica" unique_id=725252713]
@@ -1898,6 +2120,19 @@ text = "5"
 position = Vector2(-219.12955, -466.48196)
 scale = Vector2(0.5825873, 0.4315151)
 texture = ExtResource("4_mltig")
+
+[node name="DineroGastoT" type="Label" parent="TiposDeEnergia/Termoelectrica" unique_id=509442491]
+modulate = Color(1, 1, 1, 0)
+offset_left = -174.23901
+offset_top = -630.54956
+offset_right = 54.760986
+offset_bottom = -315.54956
+scale = Vector2(1.20865, 1.0825922)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_7ay1y")
+theme_override_font_sizes/font_size = 200
+text = "-5"
 
 [node name="ActivarTermo" type="Label" parent="TiposDeEnergia/Termoelectrica" unique_id=108118860]
 visible = false
@@ -1918,26 +2153,26 @@ scale = Vector2(1.2826874, 0.9661507)
 texture = ExtResource("34_ovnic")
 
 [node name="FlechaAbajoT" type="Sprite2D" parent="TiposDeEnergia/Termoelectrica" unique_id=1382237257]
-position = Vector2(536.55286, -449.4459)
+position = Vector2(465.89877, -456.91992)
 scale = Vector2(5.7387424, 3.981951)
 texture = ExtResource("19_4o2i1")
 
 [node name="FlechaAbajoT2" type="Sprite2D" parent="TiposDeEnergia/Termoelectrica" unique_id=843675252]
-position = Vector2(688.05, -449.44586)
+position = Vector2(613.6229, -459.96603)
 scale = Vector2(5.738742, 3.9819508)
 texture = ExtResource("19_4o2i1")
 
 [node name="ProgressBarPetrolio" type="ProgressBar" parent="TiposDeEnergia/Termoelectrica" unique_id=175193300]
-offset_left = 374.99216
-offset_top = -289.3825
-offset_right = 592.9922
-offset_bottom = -229.3825
+offset_left = 363.6283
+offset_top = -344.2129
+offset_right = 621.03894
+offset_bottom = -268.2129
 scale = Vector2(2.0748148, 2.4870481)
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("8_7ay1y")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 45
 theme_override_styles/fill = SubResource("StyleBoxTexture_cah2i")
 min_value = 1.0
 value = 100.0
@@ -1948,8 +2183,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Petrolio" type="Sprite2D" parent="TiposDeEnergia/Termoelectrica/ProgressBarPetrolio" unique_id=2013083227]
-position = Vector2(106.3762, 105.19702)
-scale = Vector2(0.17811182, 0.13406555)
+position = Vector2(129.61818, 118.805405)
+scale = Vector2(0.3030373, 0.19140059)
 texture = ExtResource("18_m18g4")
 
 [node name="EnergiaPrimariaT" type="Sprite2D" parent="TiposDeEnergia/Termoelectrica" unique_id=1097282497]
@@ -2002,8 +2237,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("8_7ay1y")
-text = "Sin
-produccion"
+text = "Sin producción "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2018,21 +2252,6 @@ script = ExtResource("14_4o2i1")
 
 [node name="AnimationEnergia" type="AnimationPlayer" parent="TiposDeEnergia" unique_id=1014293981]
 libraries/ = SubResource("AnimationLibrary_m3jg5")
-
-[node name="CandadoTermo" type="Sprite2D" parent="." unique_id=1101932258]
-position = Vector2(1623.9999, 904)
-scale = Vector2(0.3828125, 0.35937512)
-texture = ExtResource("20_y0q1b")
-
-[node name="CandadoNuclear" type="Sprite2D" parent="." unique_id=1495495934]
-position = Vector2(1631, 364.00006)
-scale = Vector2(0.36132804, 0.3427733)
-texture = ExtResource("20_y0q1b")
-
-[node name="CandadoMolino" type="Sprite2D" parent="." unique_id=325773198]
-position = Vector2(473, 882)
-scale = Vector2(0.40271348, 0.3503949)
-texture = ExtResource("20_y0q1b")
 
 [node name="Ambiente" type="Node2D" parent="." unique_id=734272804]
 
@@ -2050,9 +2269,9 @@ diasLabel = NodePath("DiaNumero")
 animador = NodePath("../../GameManager/Animador")
 gestionBarras = NodePath("../../GameManager/GestionBarras")
 labelPositivo = NodePath("../../UI/ProgressBarEnergia/PositivoLabel")
-candadoMolino = NodePath("../../CandadoMolino")
-candadoNuclear = NodePath("../../CandadoNuclear")
-candadoTermo = NodePath("../../CandadoTermo")
+candadoMolino = NodePath("../../UI/CandadoMolino")
+candadoNuclear = NodePath("../../UI/CandadoNuclear")
+candadoTermo = NodePath("../../UI/CandadoTermo")
 botonMolino = NodePath("../../TiposDeEnergia/Molino/ButtonMolino")
 botonNuclear = NodePath("../../TiposDeEnergia/PlantaNuclear/ButtonNuclear")
 botonTermo = NodePath("../../TiposDeEnergia/Termoelectrica/ButtonTermo")
@@ -2069,24 +2288,24 @@ scale = Vector2(0.33408877, 0.31396607)
 texture = ExtResource("21_ovnic")
 
 [node name="Horas" type="Label" parent="Ambiente/DiasHoras" unique_id=974465207]
-offset_left = 1101.0001
-offset_top = 125.0
-offset_right = 1182.0001
-offset_bottom = 188.0
+offset_left = 1100.0
+offset_top = 139.0
+offset_right = 1229.0
+offset_bottom = 202.0
 scale = Vector2(1.6554158, 1.6807338)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 40
-text = "6:00"
+text = "6:00 hr"
 
 [node name="DiaNumero" type="Label" parent="Ambiente/DiasHoras" unique_id=1188107215]
 modulate = Color(1, 0.95, 0.9508333, 1)
-offset_left = 756.00006
-offset_top = 123.0
-offset_right = 840.00006
-offset_bottom = 186.0
+offset_left = 756.0
+offset_top = 140.0
+offset_right = 840.0
+offset_bottom = 203.0
 scale = Vector2(1.6477371, 1.6501712)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("8_7ay1y")
 theme_override_font_sizes/font_size = 40
 text = "Dia 1"

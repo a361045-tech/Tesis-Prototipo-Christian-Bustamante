@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://ukpdgmy7xjt6"]
+
+[ext_resource type="Script" uid="uid://c4yorlcydg0li" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/perdiste_escena.gd" id="1_1dwa3"]
+[ext_resource type="Texture2D" uid="uid://c2j16uvj7n7lv" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/FondoBlanco.png" id="2_qshwr"]
+[ext_resource type="Texture2D" uid="uid://bj28xwr5ko43f" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/descarga (2).png" id="3_y4tlm"]
+[ext_resource type="Texture2D" uid="uid://n72i46o7iuvw" path="res://UI_Menus/BaseRegistrarte.png" id="4_t265s"]
+[ext_resource type="FontFile" uid="uid://bp2wr6shfp702" path="res://UI_Menus/Anta-Regular.ttf" id="5_6lvdr"]
+[ext_resource type="Texture2D" uid="uid://bhjl72tav4obn" path="res://UI_Menus/BotonRegistrarRectangulo.png" id="6_hohyk"]
+[ext_resource type="FontFile" uid="uid://d4cqwdauio4fv" path="res://UI_Menus/Baloo-Regular.ttf" id="7_6lvdr"]
+[ext_resource type="Texture2D" uid="uid://dec0ky86hh11t" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/ProgressBars/BarraVacia.png" id="8_hohyk"]
+[ext_resource type="Texture2D" uid="uid://damgwyw7ensdl" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/2550433.png" id="9_n74j7"]
+[ext_resource type="Texture2D" uid="uid://dsue8anplctmj" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Corazon_6-removebg-preview.png" id="10_1wxih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slgms"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hts2u"]
+texture = ExtResource("8_hohyk")
+modulate_color = Color(0, 0.5686275, 0.06666667, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_phq14"]
+load_path = "res://.godot/imported/MarcoBarra.png-8b8ada78f944c5752a72bb76d7a2ab8a.ctex"
+
+[node name="PerdisteEscena" type="Node2D" unique_id=840651561 node_paths=PackedStringArray("progressbar", "perdisteLabel", "energiaIcono", "contaminacionIcono")]
+script = ExtResource("1_1dwa3")
+progressbar = NodePath("ProgressBar")
+perdisteLabel = NodePath("Perdiste/PanelContainer/PerdisteRazon")
+energiaIcono = NodePath("ProgressBar/EnergiaSimbolo")
+contaminacionIcono = NodePath("ProgressBar/ContaminacionIcono")
+
+[node name="FondoBlanco" type="Sprite2D" parent="." unique_id=1770608582]
+modulate = Color(0.78431374, 1, 1, 1)
+position = Vector2(956.75, 537.5)
+scale = Vector2(0.9976563, 0.98796296)
+texture = ExtResource("2_qshwr")
+
+[node name="PraderaBG" type="TextureRect" parent="." unique_id=2001452027]
+texture_filter = 1
+offset_left = -1.0
+offset_top = 52.0
+offset_right = 830.7992
+offset_bottom = 672.0
+scale = Vector2(2.310654, 1.6693548)
+texture = ExtResource("3_y4tlm")
+
+[node name="FondoOscuro" type="Sprite2D" parent="." unique_id=1656337280]
+modulate = Color(0, 0, 0.03529412, 0.58431375)
+position = Vector2(959.5, 542.5)
+scale = Vector2(1.0005208, 0.99722224)
+texture = ExtResource("2_qshwr")
+
+[node name="Perdiste" type="Sprite2D" parent="." unique_id=1428312952]
+position = Vector2(1001, 549)
+texture = ExtResource("4_t265s")
+
+[node name="PanelContainer" type="PanelContainer" parent="Perdiste" unique_id=1472282802]
+offset_left = -436.0
+offset_top = -334.0
+offset_right = 443.0
+offset_bottom = -260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_slgms")
+
+[node name="PerdisteRazon" type="Label" parent="Perdiste/PanelContainer" unique_id=1786131925]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_6lvdr")
+theme_override_font_sizes/font_size = 50
+text = "Perdiste por tener 0% de energía"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BotonRegistrarRectangulo" type="Sprite2D" parent="Perdiste" unique_id=972341557]
+position = Vector2(9, 283)
+texture = ExtResource("6_hohyk")
+
+[node name="verResultados" type="Button" parent="Perdiste" unique_id=2031377351]
+offset_left = -132.0
+offset_top = 228.0
+offset_right = 148.0
+offset_bottom = 338.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_6lvdr")
+theme_override_font_sizes/font_size = 36
+text = "Ver resultados"
+flat = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=57761343]
+offset_left = 693.0
+offset_top = 433.0
+offset_right = 897.3556
+offset_bottom = 509.0
+scale = Vector2(2.0748148, 2.4870481)
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("7_6lvdr")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/fill = SubResource("StyleBoxTexture_hts2u")
+min_value = 1.0
+value = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ProgressBar" unique_id=1547008055]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarcoEnergiaBarra" type="Sprite2D" parent="ProgressBar" unique_id=2042506318]
+position = Vector2(102.177826, 35.303986)
+scale = Vector2(0.61791533, 0.9411988)
+texture = SubResource("CompressedTexture2D_phq14")
+
+[node name="EnergiaSimbolo" type="Sprite2D" parent="ProgressBar" unique_id=1871474057]
+visible = false
+position = Vector2(263.156, 33.372902)
+scale = Vector2(0.18657921, 0.1431751)
+texture = ExtResource("9_n74j7")
+
+[node name="ContaminacionIcono" type="Sprite2D" parent="ProgressBar" unique_id=1811336272]
+visible = false
+position = Vector2(265.08386, 37.795815)
+scale = Vector2(0.46608368, 0.4271818)
+texture = ExtResource("10_1wxih")
+
+[connection signal="pressed" from="Perdiste/verResultados" to="." method="_on_ver_resultados_pressed"]

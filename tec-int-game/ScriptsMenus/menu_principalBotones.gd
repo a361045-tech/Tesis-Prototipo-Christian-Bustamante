@@ -29,12 +29,12 @@ func _process(delta: float) -> void:
 
 func _on_boton_play_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/ElegirMinijuego.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/ElegirMinijuego.tscn")
 
 
 func _on_boton_puntajes_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/elegir_puntaje.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/elegir_puntaje.tscn")
 
 
 func _on_boton_salir_pressed() -> void:

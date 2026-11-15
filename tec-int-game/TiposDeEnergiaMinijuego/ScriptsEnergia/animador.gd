@@ -45,6 +45,24 @@ func desbloquearNuclear() -> void:
 func desbloquearTermo() -> void:
 	animacionEnergias.play("Termo_Desbloqueo")
 
+func GastarPanel() -> void:
+	animacionDinero.play("Gastar Dinero Panel")
+	
+func GastarMolino() -> void:
+	animacionDinero.play("Gastar Dinero Molino")
+
+func GastarNuclear() -> void:
+	animacionDinero.play("Gastar Dinero Nuclear")
+
+func GastarTermo() -> void:
+	animacionDinero.play("Gastar Dinero Termo")
+
+func TutorialPanel(activar: bool) -> void:
+	if activar == true:
+		animacionEnergias.play("Tutorial flecha")
+	elif animacionEnergias.current_animation == "Tutorial flecha":
+		animacionEnergias.stop()
+
 
 
 func cambiarDia(horaDia: int) -> void:
@@ -56,9 +74,11 @@ func cambiarDia(horaDia: int) -> void:
 	else:
 		animacionCambiarDia.play("Noche a dia")
 
-func activacionesPanel(activar: bool) -> void:
-	if activar == true:
+func activacionesPanel(activar: int) -> void:
+	if activar == 1:
 		animacionEnergias.play("Panel_Activar")
-	else:
+	elif activar == 2:
 		animacionEnergias.play("Panel_Desactivar")
+	elif activar == 2:
+		animacionEnergias.play("Panel_Invalido_Desactivado")
 	

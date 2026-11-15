@@ -11,6 +11,8 @@ extends Sprite2D
 
 @export var energiaPrimaria: Sprite2D
 @export var energiaSecundaria: Sprite2D
+@export var linea1N: Sprite2D
+@export var linea2N: Sprite2D
 
 @export var labelEPN: Label
 @export var labelESN: Label
@@ -45,7 +47,9 @@ func _process(delta: float) -> void:
 			energiaPrimaria.texture = rectanguloDesactivado
 			energiaSecundaria.texture = rectanguloDesactivado
 			gestionBarrasNodo.cambiarLabel(labelEPN, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
-			gestionBarrasNodo.cambiarLabel(labelESN, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+			gestionBarrasNodo.cambiarLabel(labelESN, "Sin producción", Color(0.0, 0.0, 0.0, 1.0))
+			linea1N.modulate = Color(0.0, 0.0, 0.0, 1.0)
+			linea2N.modulate = Color(0.0, 0.0, 0.0, 1.0)
 			gestionBarrasNodo.cambiarFlechas(valorEnergiaNuclear, false, labelPositivo)
 		
 		gestionBarrasNodo.cambiarLabel(botonNuclear, "Invalido", Color(0.601, 0.601, 0.601, 1.0))
@@ -71,7 +75,9 @@ func _on_button_nuclear_pressed() -> void:
 					energiaSecundaria.texture = rectanguloDesactivado
 					electricidadN.visible = false
 					gestionBarrasNodo.cambiarLabel(labelEPN, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
-					gestionBarrasNodo.cambiarLabel(labelESN, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelESN, "Sin producción", Color(0.0, 0.0, 0.0, 1.0))
+					linea1N.modulate = Color(0.0, 0.0, 0.0, 1.0)
+					linea2N.modulate = Color(0.0, 0.0, 0.0, 1.0)
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaNuclear, false, labelPositivo)
 					
 				
@@ -82,13 +88,15 @@ func _on_button_nuclear_pressed() -> void:
 					Sonidos.audioActivarTE.play()
 					labelValor = gestionDineroNodo.cambiar_dinero(dineroNuclear)
 					animador.dineroParpadeo()
-					
+					animador.GastarNuclear()
 					
 					DatosGlobales.plantaNuclearActivo = true
 					gestionBarrasNodo.cambiarLabel(botonNuclear, "Desactivar", Color(1, 0, 0, 1))
 					energiaPrimaria.texture = rectanguloNuclear
 					energiaSecundaria.texture = rectanguloElectrico
 					electricidadN.visible = true
-					gestionBarrasNodo.cambiarLabel(labelEPN, "Energia nuclear", Color(0.0, 0.0, 0.0, 1.0))
-					gestionBarrasNodo.cambiarLabel(labelESN, "Energia electrica", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEPN, "Energía nuclear", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelESN, "Energía eléctrica", Color(0.0, 0.0, 0.0, 1.0))
+					linea1N.modulate = Color(1, 0, 0, 1)
+					linea2N.modulate = Color(1, 0, 0, 1)
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaNuclear, true, labelPositivo)

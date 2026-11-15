@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c7pour70dfitg"]
+
+[ext_resource type="Texture2D" uid="uid://vqy3a58j5dct" path="res://UI_Menus/FlechaRegresar.png" id="1_ppgwp"]
+
+[node name="FlechaTutorialP" type="Sprite2D" unique_id=326756476]
+modulate = Color(0.98333335, 1, 0, 1)
+rotation = -0.65076315
+scale = Vector2(1.0054349, 1.0654179)
+texture = ExtResource("1_ppgwp")

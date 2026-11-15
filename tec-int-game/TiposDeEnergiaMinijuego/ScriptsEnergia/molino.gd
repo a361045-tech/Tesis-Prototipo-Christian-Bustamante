@@ -13,6 +13,8 @@ extends Sprite2D
 
 @export var energiaPrimaria: Sprite2D
 @export var energiaSecundaria: Sprite2D
+@export var linea1M: Sprite2D
+@export var linea2M: Sprite2D
 
 @export var labelEPM: Label
 @export var labelESM: Label
@@ -71,7 +73,9 @@ func _on_button_molino_pressed() -> void:
 				energiaSecundaria.texture = rectanguloDesactivado
 				electricidadM.visible = false
 				gestionBarrasNodo.cambiarLabel(labelEPM, "Desactivado", Color(0.0, 0.0, 0.0, 1.0))
-				gestionBarrasNodo.cambiarLabel(labelESM, "Sin Produccion", Color(0.0, 0.0, 0.0, 1.0))
+				gestionBarrasNodo.cambiarLabel(labelESM, "Sin producción", Color(0.0, 0.0, 0.0, 1.0))
+				linea1M.modulate = Color(0.0, 0.0, 0.0, 1.0)
+				linea2M.modulate = Color(0.0, 0.0, 0.0, 1.0)
 				
 				if DatosGlobales.nivelViento == 1:
 					gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoDebil, false, labelPositivo)
@@ -87,6 +91,7 @@ func _on_button_molino_pressed() -> void:
 					Sonidos.audioActivarTE.play()
 					labelValor = gestionDineroNodo.cambiar_dinero(dineroMolino)
 					animador.dineroParpadeo()
+					animador.GastarMolino()
 					
 					DatosGlobales.molinoActivo = true
 					DatosGlobales.energiaActiva = true
@@ -94,8 +99,10 @@ func _on_button_molino_pressed() -> void:
 					gestionBarrasNodo.cambiarLabel(botonMolino, "Desactivar", Color(1, 0, 0, 1))
 					energiaPrimaria.texture = rectanguloCinetica
 					energiaSecundaria.texture = rectanguloElectrico
-					gestionBarrasNodo.cambiarLabel(labelEPM, "Energia cinetica", Color(0.0, 0.0, 0.0, 1.0))
-					gestionBarrasNodo.cambiarLabel(labelESM, "Energia electrica", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelEPM, "Energía cinetica", Color(0.0, 0.0, 0.0, 1.0))
+					gestionBarrasNodo.cambiarLabel(labelESM, "Energía eléctrica", Color(0.0, 0.0, 0.0, 1.0))
+					linea1M.modulate = Color(1, 0, 0, 1)
+					linea2M.modulate = Color(1, 0, 0, 1)
 					
 					if DatosGlobales.nivelViento == 1:
 						gestionBarrasNodo.cambiarFlechas(valorEnergiaVientoDebil, true, labelPositivo)

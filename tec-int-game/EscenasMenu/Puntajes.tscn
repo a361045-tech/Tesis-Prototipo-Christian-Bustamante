@@ -26,9 +26,9 @@ iconoFiltro = NodePath("BaseFiltro")
 panelFiltro = NodePath("PanelFiltro")
 buscador = NodePath("BarraBuscar/LineEditBuscador")
 
-[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1345483463]
-position = Vector2(961, 545.5)
-scale = Vector2(1.337, 1.064)
+[node name="FondoMenus" type="TextureRect" parent="." unique_id=1501480016]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_3qyrf")
 
 [node name="RectangleBaseP" type="Sprite2D" parent="." unique_id=2097266664]
@@ -88,11 +88,14 @@ offset_left = -412.55933
 offset_top = -40.0
 offset_right = 491.30505
 offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
+theme_override_colors/font_placeholder_color = Color(0.728822, 0.728822, 0.728822, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_cjcy8")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Buscar"
+clear_button_enabled = true
 flat = true
 
 [node name="BaseFiltro" type="Sprite2D" parent="." unique_id=1630670928]

@@ -57,13 +57,12 @@ func mostrar_usuarios() -> void:
 				var nombre_completo = (
 					str(usuario["nombre"]) + " " +
 					str(usuario["apellidoP"]) + " " +
-					str(usuario["apellidoM"])
+					str(usuario["apellidoM"]) + " " +
+					str(usuario["grupo"])
 				).to_lower()
 
-				# Obtener fecha
 				var fecha = str(usuario["fecha"]).to_lower()
 
-				# Buscar tanto en nombre como en fecha
 				return (
 					nombre_completo.contains(texto)
 					or fecha.contains(texto)
@@ -96,9 +95,7 @@ func mostrar_usuarios() -> void:
 func _on_regresar_pressed() -> void:
 	Sonidos.audioClickMenu.play()
 
-	get_tree().change_scene_to_file(
-		"res://EscenasMenu/elegir_puntaje.tscn"
-	)
+	Transiciones.cambiarEscena("res://EscenasMenu/elegir_puntaje.tscn")
 
 
 func _on_regresar_mouse_entered() -> void:

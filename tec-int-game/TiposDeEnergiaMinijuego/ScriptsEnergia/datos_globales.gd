@@ -25,6 +25,9 @@ var candadoMolino = true
 var candadoNuclear = true
 var candadoTermo = true
 
+var perderEnergia = false
+var perderContaminacion = false
+
 var valorHabitacionesSumado = 0
 
 var save_path = "user://save_game.dat"

@@ -81,3 +81,50 @@ func guardar_usuarios_como_imagen():
 		print("Error al guardar la imagen: ", error)
 
 	viewport.queue_free()
+	
+func guardar_usuarios_como_excel() -> void:
+	var ruta_documentos = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+	var ruta_guardado = ruta_documentos + "/Registro_TiposDeEnergia_Usuarios.csv"
+
+	if FileAccess.file_exists(ruta_guardado):
+		var quitar_solo_lectura = 'attrib -R "' + ruta_guardado + '"'
+		OS.execute("cmd.exe", ["/c", quitar_solo_lectura])
+
+	var archivo = FileAccess.open(ruta_guardado, FileAccess.WRITE)
+
+	if archivo == null:
+		print("Error al crear/modificar el archivo CSV")
+		return
+
+	archivo.store_line("Nombre,Apellido P,Apellido M,Grupo,Tiempo,Calificacion,Fecha")
+
+	for usuario in DatosGlobales.usuarios:
+		if usuario is Dictionary:
+
+			var nombre = str(usuario.get("nombre", ""))
+			var apellido_p = str(usuario.get("apellidoP", ""))
+			var apellido_m = str(usuario.get("apellidoM", ""))
+			var grupo = str(usuario.get("grupo", ""))
+			var tiempo = str(usuario.get("tiempo", ""))
+			var calificacion = str(usuario.get("calificacion", ""))
+			var fecha = str(usuario.get("fecha", ""))
+
+			var linea = "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"" % [
+				nombre.replace("\"", "\"\""),
+				apellido_p.replace("\"", "\"\""),
+				apellido_m.replace("\"", "\"\""),
+				grupo.replace("\"", "\"\""),
+				tiempo.replace("\"", "\"\""),
+				calificacion.replace("\"", "\"\""),
+				fecha.replace("\"", "\"\"")
+			]
+
+			archivo.store_line(linea)
+
+	archivo.close()
+
+	var poner_solo_lectura = 'attrib +R "' + ruta_guardado + '"'
+	OS.execute("cmd.exe", ["/c", poner_solo_lectura])
+
+	print("Archivo exportado correctamente:")
+	print(ruta_guardado)

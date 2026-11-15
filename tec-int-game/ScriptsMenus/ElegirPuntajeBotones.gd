@@ -19,12 +19,12 @@ func _process(delta: float) -> void:
 
 func _on_regresar_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/MenuPrincipal.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/MenuPrincipal.tscn")
 
 
 func _on_tipos_de_energia_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/Puntajes.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/Puntajes.tscn")
 
 
 func _on_regresar_mouse_entered() -> void:

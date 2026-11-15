@@ -22,14 +22,17 @@ func _process(delta: float) -> void:
 		energiaBajaN.visible = false
 		energiaMediaN.visible = false
 		energiaAltaN.visible = false
+		
 	elif DatosGlobales.valorHabitacionesSumado == 1:
 		energiaBajaN.visible = true
 		energiaMediaN.visible = false
 		energiaAltaN.visible = false
+		
 	elif DatosGlobales.valorHabitacionesSumado  == 2:
 		energiaBajaN.visible = true
 		energiaMediaN.visible = true
 		energiaAltaN.visible = false
+		
 	elif DatosGlobales.valorHabitacionesSumado  == 3:
 		energiaBajaN.visible = true
 		energiaMediaN.visible = true
@@ -42,8 +45,9 @@ func _process(delta: float) -> void:
 		energiaMediaExtra.visible = false
 		energiaAltaP.visible = false
 		energiaMuyAlta.visible = false
-		print("1")
+		
 	elif DatosGlobales.molinoActivo == true:
+		
 		if DatosGlobales.nivelViento == 1:
 			energiaMuyBaja.visible = true
 			energiaBajaP.visible = false
@@ -51,6 +55,7 @@ func _process(delta: float) -> void:
 			energiaMediaExtra.visible = false
 			energiaAltaP.visible = false
 			energiaMuyAlta.visible = false
+			
 		elif DatosGlobales.nivelViento == 2:
 			energiaMuyBaja.visible = false
 			energiaBajaP.visible = true
@@ -58,6 +63,7 @@ func _process(delta: float) -> void:
 			energiaMediaExtra.visible = false
 			energiaAltaP.visible = false
 			energiaMuyAlta.visible = false
+			
 	elif DatosGlobales.panelSolarActivo == true:
 		energiaMuyBaja.visible = false
 		energiaBajaP.visible = true
@@ -66,6 +72,7 @@ func _process(delta: float) -> void:
 		energiaAltaP.visible = false
 		energiaMuyAlta.visible = false
 		print("2")
+		
 	elif DatosGlobales.plantaNuclearActivo == true:
 		energiaMuyBaja.visible = false
 		energiaBajaP.visible = true
@@ -73,6 +80,7 @@ func _process(delta: float) -> void:
 		energiaMediaExtra.visible = true
 		energiaAltaP.visible = false
 		energiaMuyAlta.visible = false
+		
 	elif DatosGlobales.termoelectricaActivo == true:
 		energiaMuyBaja.visible = false
 		energiaBajaP.visible = true

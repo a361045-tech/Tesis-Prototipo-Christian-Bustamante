@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bwuik0kjey6mn"]
+
+[ext_resource type="Texture2D" uid="uid://c2j16uvj7n7lv" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/FondoBlanco.png" id="1_cemv1"]
+[ext_resource type="Script" uid="uid://cpi161rrpye0h" path="res://TiposDeEnergiaMinijuego/ScriptsEnergia/TutorialScripts/tutorial_1.gd" id="1_dybwf"]
+[ext_resource type="Texture2D" uid="uid://dudeixfk8gny1" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/Tutorial Imagenes/Tutorial1.png" id="1_meexf"]
+[ext_resource type="Texture2D" uid="uid://bj28xwr5ko43f" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/descarga (2).png" id="2_dqttq"]
+[ext_resource type="FontFile" uid="uid://d4cqwdauio4fv" path="res://UI_Menus/Baloo-Regular.ttf" id="4_dqttq"]
+[ext_resource type="Texture2D" uid="uid://b13jyjeb4a17l" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/UI/SaltarCuadrado.png" id="6_u51ge"]
+[ext_resource type="Texture2D" uid="uid://cdenp5yfu3mhv" path="res://TiposDeEnergiaMinijuego/SpritesEnergia/skip-end-fill-4cxo5vm7017b5hfq4wv7l6.webp" id="7_kvl41"]
+
+[node name="Tutorial1" type="Node2D" unique_id=242159057]
+script = ExtResource("1_dybwf")
+
+[node name="FondoBlanco" type="Sprite2D" parent="." unique_id=1156707360]
+modulate = Color(0.78431374, 1, 1, 1)
+position = Vector2(956.75, 537.5)
+scale = Vector2(0.9976563, 0.98796296)
+texture = ExtResource("1_cemv1")
+
+[node name="PraderaBG" type="TextureRect" parent="." unique_id=492374383]
+texture_filter = 1
+offset_left = -1.0
+offset_top = 52.0
+offset_right = 830.7992
+offset_bottom = 672.0
+scale = Vector2(2.310654, 1.6693548)
+texture = ExtResource("2_dqttq")
+
+[node name="FondoOscuro" type="Sprite2D" parent="." unique_id=805759390]
+modulate = Color(0, 0, 0.03529412, 0.58431375)
+position = Vector2(959.5, 542.5)
+scale = Vector2(1.0005208, 0.99722224)
+texture = ExtResource("1_cemv1")
+
+[node name="TutorialImagen" type="TextureRect" parent="." unique_id=688381741]
+offset_left = 414.0
+offset_top = 204.0
+offset_right = 1565.0
+offset_bottom = 840.0
+texture = ExtResource("1_meexf")
+
+[node name="Siguiente" type="Button" parent="." unique_id=1071558915]
+offset_left = 1356.0
+offset_top = 738.0
+offset_right = 1525.0
+offset_bottom = 817.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_dqttq")
+theme_override_font_sizes/font_size = 30
+text = "Siguiente"
+flat = true
+
+[node name="SaltarCuadrado" type="Sprite2D" parent="." unique_id=3707716]
+position = Vector2(1457, 271)
+texture = ExtResource("6_u51ge")
+
+[node name="Saltar" type="Button" parent="SaltarCuadrado" unique_id=1540436842]
+offset_left = -84.0
+offset_top = -43.0
+offset_right = 85.0
+offset_bottom = 36.0
+scale = Vector2(1.0137454, 1.040355)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_dqttq")
+theme_override_font_sizes/font_size = 30
+text = "   Saltar"
+flat = true
+alignment = 0
+
+[node name="SaltarIcono" type="Sprite2D" parent="SaltarCuadrado" unique_id=1785637377]
+position = Vector2(51, -4)
+scale = Vector2(0.20707436, 0.2097016)
+texture = ExtResource("7_kvl41")
+
+[node name="Paginas" type="Label" parent="." unique_id=567278580]
+offset_left = 446.0
+offset_top = 228.0
+offset_right = 585.0
+offset_bottom = 276.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_dqttq")
+theme_override_font_sizes/font_size = 30
+text = "Pagina 1/6"
+
+[connection signal="mouse_entered" from="Siguiente" to="." method="_on_siguiente_mouse_entered"]
+[connection signal="mouse_exited" from="Siguiente" to="." method="_on_siguiente_mouse_exited"]
+[connection signal="pressed" from="Siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="mouse_entered" from="SaltarCuadrado/Saltar" to="." method="_on_saltar_mouse_entered"]
+[connection signal="mouse_exited" from="SaltarCuadrado/Saltar" to="." method="_on_saltar_mouse_exited"]
+[connection signal="pressed" from="SaltarCuadrado/Saltar" to="." method="_on_saltar_pressed"]

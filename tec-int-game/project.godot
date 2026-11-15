@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DatosGlobales="*uid://cxd35kjdkubm"
 Guardado="*uid://upxswr4wuo72"
 Sonidos="*uid://dk2t7v266nltg"
+Transiciones="*uid://3afqolxxajk6"
 
 [display]
 

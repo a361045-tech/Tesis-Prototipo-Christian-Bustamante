@@ -20,21 +20,23 @@ var botonRepetirSel = preload("res://UI_Menus/RectangleRepetirSel.png")
 var botonRepetirNormal = preload("res://UI_Menus/RectangleRepetir.png")
 
 func _ready() -> void:
-	Sonidos.audioMusicaTE.stop()
-	Sonidos.audioResultadosTE.play()
+	#Sonidos.audioMusicaTE.stop()
+	#Sonidos.audioResultadosTE.play()
+	Sonidos.audioMusicaMenu.play()
+	
 	
 	var fecha = Time.get_date_string_from_system()
 	
-	if DatosGlobales.puntaje < 2:
+	if DatosGlobales.puntaje < 1.06:
 		calificacion = "Mejorable"
 		contenedorCalificacion.texture = contenedorMejorable
-	elif DatosGlobales.puntaje >= 2 and DatosGlobales.puntaje < 3.0:
+	elif DatosGlobales.puntaje >= 1.06 and DatosGlobales.puntaje < 2:
 		calificacion = "Bien"
 		contenedorCalificacion.texture = contenedorBien
-	elif DatosGlobales.puntaje >= 3.0 and DatosGlobales.puntaje < 5:
+	elif DatosGlobales.puntaje >= 2 and DatosGlobales.puntaje < 3.06:
 		calificacion = "Genial"
 		contenedorCalificacion.texture = contenedorGenial
-	elif DatosGlobales.puntaje >=5:
+	elif DatosGlobales.puntaje >= 3.06:
 		calificacion = "Excelente"
 		contenedorCalificacion.texture = contenedorExcelente
 	
@@ -56,7 +58,8 @@ func _ready() -> void:
 	DatosGlobales.game_data["Usuarios"] = DatosGlobales.usuarios
 	print(DatosGlobales.usuarios)
 	guardadoNodo.save_game()
-	guardadoNodo.guardar_usuarios_como_imagen()
+	#guardadoNodo.guardar_usuarios_como_imagen()
+	guardadoNodo.guardar_usuarios_como_excel()
 	
 	reiniciarDatos()
 
@@ -82,15 +85,18 @@ func reiniciarDatos() -> void:
 	DatosGlobales.candadoMolino = true
 	DatosGlobales.candadoNuclear = true
 	DatosGlobales.candadoTermo = true
+	
+	DatosGlobales.perderEnergia = false
+	DatosGlobales.perderContaminacion = false
 
 func _on_repetir_boton_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/RegistrarUsuario.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/RegistrarUsuario.tscn")
 
 
 func _on_salir_boton_pressed() -> void:
 	Sonidos.audioClickMenu.play()
-	get_tree().change_scene_to_file("res://EscenasMenu/MenuPrincipal.tscn")
+	Transiciones.cambiarEscena("res://EscenasMenu/MenuPrincipal.tscn")
 	
 
 

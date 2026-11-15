@@ -8,10 +8,11 @@ extends PanelContainer
 
 func inicializar(usuario: Dictionary) -> void:
 
-	nombre_label.text = "%s %s %s" % [
+	nombre_label.text = "%s %s %s %s" % [
 		usuario["nombre"],
 		usuario["apellidoP"],
-		usuario["apellidoM"]
+		usuario["apellidoM"],
+		usuario["grupo"]
 	]
 
 	tiempo_label.text = usuario["tiempo"]

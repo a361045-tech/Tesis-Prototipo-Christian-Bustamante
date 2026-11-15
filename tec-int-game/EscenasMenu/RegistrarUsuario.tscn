@@ -7,17 +7,80 @@
 [ext_resource type="Texture2D" uid="uid://cdo6waugcu3dh" path="res://UI_Menus/EscribirrEspacio.png" id="5_n8p3s"]
 [ext_resource type="Texture2D" uid="uid://bhjl72tav4obn" path="res://UI_Menus/BotonRegistrarRectangulo.png" id="6_m6olq"]
 
-[node name="Registro" type="Node2D" unique_id=764009104 node_paths=PackedStringArray("registroNombre", "registroAP", "registroAM", "registroGrupo", "botonRegistrar")]
+[sub_resource type="Animation" id="Animation_fa4nm"]
+resource_name = "Faltan Datos"
+length = 2.1666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 2.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333336, 0.53333336, 2.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cud6y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3l4t"]
+_data = {
+&"Faltan Datos": SubResource("Animation_fa4nm"),
+&"RESET": SubResource("Animation_cud6y")
+}
+
+[node name="Registro" type="Node2D" unique_id=764009104 node_paths=PackedStringArray("registroNombre", "registroAP", "registroAM", "registroGrupo", "botonRegistrar", "animationError")]
+position = Vector2(2, 0)
 script = ExtResource("1_ct2pj")
 registroNombre = NodePath("EscribirrEspacioNombres/Nombres")
 registroAP = NodePath("EscribirrEspacioAP/ApellidoPaterno")
 registroAM = NodePath("EscribirrEspacioAM/ApellidoMaterno")
 registroGrupo = NodePath("EscribirrEspacioGrupo/Grupo")
 botonRegistrar = NodePath("BotonRegistrarRectangulo")
+animationError = NodePath("ErrorCampos/ErrorCamposAnimation")
 
-[node name="FondoMenus" type="Sprite2D" parent="." unique_id=1628115485]
-position = Vector2(961, 545.5)
-scale = Vector2(1.337, 1.064)
+[node name="FondoMenus" type="TextureRect" parent="." unique_id=1940130038]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_fa4nm")
 
 [node name="BaseRegistrarte" type="Sprite2D" parent="." unique_id=603409601]
@@ -53,6 +116,7 @@ offset_left = -217.0
 offset_top = -45.0
 offset_right = 233.0
 offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Nombres"
@@ -63,9 +127,9 @@ position = Vector2(1161, 387)
 texture = ExtResource("5_n8p3s")
 
 [node name="ApellidoPLabel" type="Label" parent="EscribirrEspacioAP" unique_id=915047124]
-offset_left = -636.0
+offset_left = -650.0
 offset_top = -40.0
-offset_right = -206.0
+offset_right = -220.0
 offset_bottom = 36.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_v3l4t")
@@ -77,6 +141,7 @@ offset_left = -217.0
 offset_top = -49.0
 offset_right = 234.0
 offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Apellido paterno"
@@ -87,9 +152,9 @@ position = Vector2(1163, 495)
 texture = ExtResource("5_n8p3s")
 
 [node name="ApellidoMLabel" type="Label" parent="EscribirrEspacioAM" unique_id=1544210904]
-offset_left = -636.0
+offset_left = -650.0
 offset_top = -40.0
-offset_right = -206.0
+offset_right = -220.0
 offset_bottom = 36.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_v3l4t")
@@ -101,6 +166,7 @@ offset_left = -220.0
 offset_top = -45.0
 offset_right = 216.0
 offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Apellido materno"
@@ -125,6 +191,7 @@ offset_left = -220.0
 offset_top = -44.0
 offset_right = 239.0
 offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Grupo"
@@ -145,6 +212,21 @@ theme_override_font_sizes/font_size = 45
 text = "Registrar
 "
 flat = true
+
+[node name="ErrorCampos" type="Label" parent="." unique_id=1485582521]
+offset_left = 610.0
+offset_top = 948.0
+offset_right = 1318.0
+offset_bottom = 1024.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_v3l4t")
+theme_override_font_sizes/font_size = 55
+text = "Falta llenar todos los datos"
+
+[node name="ErrorCamposAnimation" type="AnimationPlayer" parent="ErrorCampos" unique_id=1240234379]
+libraries/ = SubResource("AnimationLibrary_v3l4t")
 
 [connection signal="mouse_entered" from="BotonRegistrarRectangulo/RegistrarBoton" to="." method="_on_registrar_boton_mouse_entered"]
 [connection signal="mouse_exited" from="BotonRegistrarRectangulo/RegistrarBoton" to="." method="_on_registrar_boton_mouse_exited"]
